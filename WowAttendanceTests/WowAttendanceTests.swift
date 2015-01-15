@@ -8,6 +8,7 @@
 
 import UIKit
 import XCTest
+import WowAttendance
 
 class WowAttendanceTests: XCTestCase {
     
@@ -31,6 +32,12 @@ class WowAttendanceTests: XCTestCase {
         self.measureBlock() {
             // Put the code you want to measure the time of here.
         }
+    }
+    
+    func testViewDidLoad(){
+        let vc = ViewController()
+        
+        XCTAssertNotNil(vc.view, "view Did load successfully")
     }
     
 }
