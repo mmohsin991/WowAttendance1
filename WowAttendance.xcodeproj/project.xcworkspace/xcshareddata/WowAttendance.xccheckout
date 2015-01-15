@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>95978A75-FF76-40A3-B4B5-C98E4BBDF71E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>WowAttendance</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>FA9DCDC6AF7DA1C9268822397608DF5582CBC501</key>
+		<string>https://github.com/mmohsin991/WowAttendance1.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>WowAttendance.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>FA9DCDC6AF7DA1C9268822397608DF5582CBC501</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/mmohsin991/WowAttendance1.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>FA9DCDC6AF7DA1C9268822397608DF5582CBC501</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FA9DCDC6AF7DA1C9268822397608DF5582CBC501</string>
+			<key>IDESourceControlWCCName</key>
+			<string>WowAttendance1</string>
+		</dict>
+	</array>
+</dict>
+</plist>
