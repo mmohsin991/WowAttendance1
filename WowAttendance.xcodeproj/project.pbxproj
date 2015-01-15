@@ -15,6 +15,7 @@
 		423D62E61A60718B00D92D1B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 423D62E51A60718B00D92D1B /* Images.xcassets */; };
 		423D62E91A60718B00D92D1B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 423D62E71A60718B00D92D1B /* LaunchScreen.xib */; };
 		423D62F51A60718B00D92D1B /* WowAttendanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423D62F41A60718B00D92D1B /* WowAttendanceTests.swift */; };
+		4240C8861A67E08C00FFE1E7 /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4240C8851A67E08C00FFE1E7 /* ModelTests.swift */; };
 		4248B2321A6280F80003784E /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4248B2311A6280F80003784E /* libicucore.dylib */; };
 		4248B2341A6281080003784E /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4248B2331A6281080003784E /* libc++.dylib */; };
 		4248B2361A6281160003784E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4248B2351A6281160003784E /* CFNetwork.framework */; };
@@ -69,6 +70,7 @@
 		423D62EE1A60718B00D92D1B /* WowAttendanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WowAttendanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		423D62F31A60718B00D92D1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		423D62F41A60718B00D92D1B /* WowAttendanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WowAttendanceTests.swift; sourceTree = "<group>"; };
+		4240C8851A67E08C00FFE1E7 /* ModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
 		4248B2311A6280F80003784E /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		4248B2331A6281080003784E /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		4248B2351A6281160003784E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				423D62F41A60718B00D92D1B /* WowAttendanceTests.swift */,
+				4240C8851A67E08C00FFE1E7 /* ModelTests.swift */,
 				423D62F21A60718B00D92D1B /* Supporting Files */,
 				4261E34A1A67D933000B7137 /* WowAttendanceTests-Bridging-Header.h */,
 			);
@@ -333,6 +336,7 @@
 				4261E3451A67D8A7000B7137 /* ContainerViewController.swift in Sources */,
 				4261E33E1A67D88E000B7137 /* ViewController.swift in Sources */,
 				4261E3401A67D893000B7137 /* SignupVC.swift in Sources */,
+				4240C8861A67E08C00FFE1E7 /* ModelTests.swift in Sources */,
 				4261E3431A67D8A0000B7137 /* AddTeamVC.swift in Sources */,
 				4261E3481A67D8B7000B7137 /* Model.swift in Sources */,
 				4261E33D1A67D889000B7137 /* AppDelegate.swift in Sources */,
