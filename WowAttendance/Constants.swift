@@ -11,7 +11,7 @@ import UIKit
 
 var wowref = WowRef()
 
-var loginUser : WowUser?
+var loginUser : User?
 
 var backgroundImage : UIImage = UIImage(named: "Background1") {
     didSet{

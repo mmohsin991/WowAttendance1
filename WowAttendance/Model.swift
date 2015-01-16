@@ -340,10 +340,10 @@ class WowRef {
         }
     }
     
-    func asyncLoginUser(email: String, password: String, callBack: (error: String?, user: WowUser?) -> Void){
+    func asyncLoginUser(email: String, password: String, callBack: (error: String?, user: User?) -> Void){
         let url = "https://panacloudapi.herokuapp.com/api/signin"
         
-        var userLocal : WowUser!
+        var userLocal : User!
         
         var request = NSMutableURLRequest(URL: NSURL(string: url))
         var session = NSURLSession.sharedSession()
@@ -392,13 +392,16 @@ class WowRef {
                     callBack(error: err!.localizedDescription, user: nil)
                     
                 }
+                // if user sussefuly get token or login to node js server
                 if user != nil && statusCode == 1 {
                     if user["userID"] != nil && user["token"] != nil {
                         let userr =  user["userID"]
                         let token = user["token"]
                         
-                        userLocal = WowUser(userName: user["userID"]!, email: user["email"]!, firstName: user["firstName"]!, lastName: user["lastName"]!, teams: nil)
+                        userLocal = User(ref: "", uID: user["userID"]!, email: user["email"]!, firstName: user["firstName"]!, lastName: user["lastName"]!, status: user["status"]!)
+                        
                         println("mohsin: \(userr) \n \(token)")
+                        
                         self.asyncLogin(user["userID"]!, token: user["token"]!, callBack: { (errorDesc) -> Void in
                             if errorDesc == nil {
                                 callBack(error: nil, user: userLocal)
@@ -429,7 +432,6 @@ class WowRef {
         
         task.resume()
     }
-
     
     // if successfuly login trn errorDesc will be nil
     func asyncLogin(uID: String, token: String, callBack: (errorDesc : String?) -> Void ){
@@ -467,7 +469,6 @@ class WowRef {
             }
         })
     }
-    
     
     func asyncOrgIsExist(orgID: String, callBack: (isExist : Bool) -> Void ){
         
@@ -583,6 +584,10 @@ class WowRef {
         
     }
     
+    func asyncSignUpUser(user: User){
+        
+        
+    }
     
     
 }
