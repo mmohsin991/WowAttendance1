@@ -13,7 +13,7 @@ class SignupVC: UIViewController, UIScrollViewDelegate {
     
     var msg: String!
     var status: String!
-    
+    var rePasswordMatch = false
     
     @IBOutlet weak var txtUID: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
@@ -21,6 +21,8 @@ class SignupVC: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var txtLastName: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var txtRePassword: UITextField!
+    @IBOutlet weak var lblRePasswordMatchingMsg: UILabel!
+
 
     @IBOutlet weak var btnCancel: UIButton!
     @IBOutlet weak var btnCreate: UIButton!
@@ -43,8 +45,9 @@ class SignupVC: UIViewController, UIScrollViewDelegate {
         btnCreate.layer.cornerRadius = 4.0
 
         self.waitingInd.hidden = true
+        self.lblRePasswordMatchingMsg.hidden = true
 
-        //self.scrollView.bounds.size = self.view.frame.size
+
 
         self.scrollView.contentSize = self.containerView.frame.size
       //  println(self.scrollView.contentSize)
@@ -93,5 +96,13 @@ class SignupVC: UIViewController, UIScrollViewDelegate {
 //            }, completion: nil)
 //    }
 
-
+    @IBAction func rePasswordEditingComplete(sender: AnyObject) {
+        if self.txtPassword.text != self.txtRePassword.text {
+            self.lblRePasswordMatchingMsg.hidden = false
+        }
+        else{
+            self.lblRePasswordMatchingMsg.hidden = true
+            self.rePasswordMatch = true
+        }
+    }
 }

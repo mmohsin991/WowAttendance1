@@ -25,11 +25,9 @@
 		4248B23F1A63078E0003784E /* TeamsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4248B23E1A63078E0003784E /* TeamsVC.swift */; };
 		4248B2411A630B220003784E /* AddTeamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4248B2401A630B220003784E /* AddTeamVC.swift */; };
 		4248B2441A6311930003784E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4248B2421A6311930003784E /* LoginVC.swift */; };
-		4248B2451A6311930003784E /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4248B2431A6311930003784E /* SignupVC.swift */; };
 		4261E33D1A67D889000B7137 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423D62DB1A60718B00D92D1B /* AppDelegate.swift */; };
 		4261E33E1A67D88E000B7137 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423D62E01A60718B00D92D1B /* ViewController.swift */; };
 		4261E33F1A67D890000B7137 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4248B2421A6311930003784E /* LoginVC.swift */; };
-		4261E3401A67D893000B7137 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4248B2431A6311930003784E /* SignupVC.swift */; };
 		4261E3411A67D897000B7137 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E9E6F81A61AF5F00720F9F /* HomeVC.swift */; };
 		4261E3421A67D89B000B7137 /* TeamsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4248B23E1A63078E0003784E /* TeamsVC.swift */; };
 		4261E3431A67D8A0000B7137 /* AddTeamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4248B2401A630B220003784E /* AddTeamVC.swift */; };
@@ -39,6 +37,7 @@
 		4261E3471A67D8B3000B7137 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E9E6FC1A61B05C00720F9F /* Constants.swift */; };
 		4261E3481A67D8B7000B7137 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E9E6FE1A61BDD400720F9F /* Model.swift */; };
 		4261E3491A67D91B000B7137 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E9E7011A61BE6500720F9F /* Firebase.framework */; };
+		427B0B931A695E3400B51A71 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427B0B921A695E3400B51A71 /* SignupVC.swift */; };
 		42E9E6C21A61661200720F9F /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E9E6BE1A61661200720F9F /* ContainerViewController.swift */; };
 		42E9E6C31A61661200720F9F /* SidePanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E9E6BF1A61661200720F9F /* SidePanelViewController.swift */; };
 		42E9E6F91A61AF5F00720F9F /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E9E6F81A61AF5F00720F9F /* HomeVC.swift */; };
@@ -80,8 +79,8 @@
 		4248B23E1A63078E0003784E /* TeamsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamsVC.swift; sourceTree = "<group>"; };
 		4248B2401A630B220003784E /* AddTeamVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTeamVC.swift; sourceTree = "<group>"; };
 		4248B2421A6311930003784E /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
-		4248B2431A6311930003784E /* SignupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		4261E34A1A67D933000B7137 /* WowAttendanceTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WowAttendanceTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		427B0B921A695E3400B51A71 /* SignupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		42E9E6BE1A61661200720F9F /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		42E9E6BF1A61661200720F9F /* SidePanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidePanelViewController.swift; sourceTree = "<group>"; };
 		42E9E6F81A61AF5F00720F9F /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -141,7 +140,7 @@
 				423D62DB1A60718B00D92D1B /* AppDelegate.swift */,
 				423D62E01A60718B00D92D1B /* ViewController.swift */,
 				4248B2421A6311930003784E /* LoginVC.swift */,
-				4248B2431A6311930003784E /* SignupVC.swift */,
+				427B0B921A695E3400B51A71 /* SignupVC.swift */,
 				42E9E6F81A61AF5F00720F9F /* HomeVC.swift */,
 				4248B23E1A63078E0003784E /* TeamsVC.swift */,
 				4248B2401A630B220003784E /* AddTeamVC.swift */,
@@ -317,7 +316,7 @@
 				4248B2411A630B220003784E /* AddTeamVC.swift in Sources */,
 				42E9E6FF1A61BDD400720F9F /* Model.swift in Sources */,
 				423D62E11A60718B00D92D1B /* ViewController.swift in Sources */,
-				4248B2451A6311930003784E /* SignupVC.swift in Sources */,
+				427B0B931A695E3400B51A71 /* SignupVC.swift in Sources */,
 				42E9E6F91A61AF5F00720F9F /* HomeVC.swift in Sources */,
 				42E9E6C21A61661200720F9F /* ContainerViewController.swift in Sources */,
 				423D62DF1A60718B00D92D1B /* WowAttendance.xcdatamodeld in Sources */,
@@ -335,7 +334,6 @@
 				4261E3421A67D89B000B7137 /* TeamsVC.swift in Sources */,
 				4261E3451A67D8A7000B7137 /* ContainerViewController.swift in Sources */,
 				4261E33E1A67D88E000B7137 /* ViewController.swift in Sources */,
-				4261E3401A67D893000B7137 /* SignupVC.swift in Sources */,
 				4240C8861A67E08C00FFE1E7 /* ModelTests.swift in Sources */,
 				4261E3431A67D8A0000B7137 /* AddTeamVC.swift in Sources */,
 				4261E3481A67D8B7000B7137 /* Model.swift in Sources */,

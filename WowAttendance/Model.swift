@@ -584,15 +584,80 @@ class WowRef {
         
     }
     
-    func asyncSignUpUser(user: User){
+    func asyncSignUpUser(user: User, password: String, callBack : (error: String?) -> Void){
         
+        let url = "https://panacloudapi.herokuapp.com/api/signup"
+        
+        var userLocal : User!
+        
+        var request = NSMutableURLRequest(URL: NSURL(string: url))
+        var session = NSURLSession.sharedSession()
+        var err: NSError?
+        
+        request.HTTPMethod = "POST"
+        
+        var params = ["email": user.email, "firstName": user.firstName, "lastName": user.lastName, "password": password, "userID": user.uID] as Dictionary
+        
+        request.HTTPBody = NSJSONSerialization.dataWithJSONObject(params, options: nil, error: &err)
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        var task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+            
+            println("Response: \(response)")
+            
+            var strData = NSString(data: data, encoding: NSUTF8StringEncoding)
+            
+            println("Body: \(strData)\n\n")
+            
+            var err: NSError?
+            
+            // if response is not found nil
+            if response != nil{
+                
+                var json : NSDictionary! = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error: &err) as NSDictionary
+                
+                
+                let statusCode = json["statusCode"] as? Int
+                let statusDesc = json["statusDesc"] as? String
+                
+                if((err) != nil) {
+                    
+                    //                    println(err!.localizedDescription)
+                    callBack(error: err!.localizedDescription)
+                    
+                }
+                // if user sussefuly signup to node js server
+                if statusCode == 1 {
+                    callBack(error: nil)
+                    }
+                    
+                    // if any error occuerd by our node.js server
+                else if statusCode != 1 {
+                    callBack(error: statusDesc)
+                    
+                }
+                
+            }
+                
+                // if response is not found nil
+            else if response == nil {
+                callBack(error: "respnse is nil")
+            }
+            
+            
+        })
+        
+        task.resume()
         
     }
     
-    func tempAdd(a: Int, b: Int) -> Int {
-        return a + b
-    }
     
+    func deleteUser() {
+        
+    }
     
 }
 
