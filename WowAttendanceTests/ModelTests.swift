@@ -11,6 +11,8 @@ import XCTest
 //import WowAttendance
 
 
+
+
 class ModelTests: XCTestCase {
    
     func testSignIn(){
@@ -26,7 +28,7 @@ class ModelTests: XCTestCase {
         wowref.asyncLoginUser("ziaukhan@hotmail.com", password: "123") { (error, user) -> Void in
             
             // Perform our tests...
-            XCTAssertNil(error, "login Sussessfuly \(user?.userName)")
+            XCTAssertNil(error, "login Sussessfuly \(user?.uID)")
             
             // And fulfill the expectation...
             loginExpectation1.fulfill()
@@ -36,7 +38,7 @@ class ModelTests: XCTestCase {
         //if login with correct username and Wrong password
         wowref.asyncLoginUser("ziaukhan@hotmail.com", password: "xyz") { (error, user) -> Void in
 
-            XCTAssertNotNil(error, "login Sussessfuly \(user?.userName)")
+            XCTAssertNotNil(error, "login Sussessfuly \(user?.uID)")
             
             loginExpectation2.fulfill()
             
@@ -45,7 +47,7 @@ class ModelTests: XCTestCase {
         //if login with wrong username and correct password
         wowref.asyncLoginUser("xyz@hotmail.com", password: "123") { (error, user) -> Void in
             
-            XCTAssertNotNil(error, "login Sussessfuly \(user?.userName)")
+            XCTAssertNotNil(error, "login Sussessfuly \(user?.uID)")
             
             loginExpectation3.fulfill()
             
@@ -54,7 +56,7 @@ class ModelTests: XCTestCase {
         //if login with wrong username and wrong password
         wowref.asyncLoginUser("xyz@hotmail.com", password: "xyz") { (error, user) -> Void in
             
-            XCTAssertNotNil(error, "login Sussessfuly \(user?.userName)")
+            XCTAssertNotNil(error, "login Sussessfuly \(user?.uID)")
             
             loginExpectation4.fulfill()
             
@@ -72,8 +74,10 @@ class ModelTests: XCTestCase {
     func testUserExist(){
         
         // Declare our expectation
-        let UserIsExistExpectation = expectationWithDescription("login1")
+        let UserIsExistExpectation1 = expectationWithDescription("correct username")
+        let UserIsExistExpectation2 = expectationWithDescription("wrong username")
 
+        // if corrrect username provided
         // Call the asynchronous method with completion handler
         wowref.asynUserIsExist("mmohsin", callBack: { (isExist) -> Void in
             
@@ -81,9 +85,21 @@ class ModelTests: XCTestCase {
             XCTAssertTrue(isExist, "user id exist")
             
             // And fulfill the expectation...
-            UserIsExistExpectation.fulfill()
+            UserIsExistExpectation1.fulfill()
             
         })
+        
+        // if wrong username provided
+        wowref.asynUserIsExist("zyz", callBack: { (isExist) -> Void in
+            
+            // Perform our tests...
+            XCTAssertFalse(isExist, "user id does not exist")
+            
+            // And fulfill the expectation...
+            UserIsExistExpectation2.fulfill()
+            
+        })
+        
         
         
         // Loop until the expectation is fulfilled
@@ -91,6 +107,34 @@ class ModelTests: XCTestCase {
             XCTAssertNil(error, "Error")
         })
     }
+    
+    
+    func testSignUp() {
+        // Declare our expectation
+        let SignUpExpectation1 = expectationWithDescription("new user name")
+//        let SignUpExpectation2 = expectationWithDescription("aleady exist username")
+//        let SignUpExpectation3 = expectationWithDescription("new user name with aleady exist email")
+        
+        
+        // if new user name provided
+        wowref.asyncSignUpUser(User(ref: "", uID: "newUserName", email: "newEmailAddress@gmail.com", firstName: "M", lastName: "Mo", status: "pending"), password: "123") { (error) -> Void in
+            
+            XCTAssertNil(error, "user signup successfuly")
+            SignUpExpectation1.fulfill()
+            
+        }
+        
+        
+        
+        
+        waitForExpectationsWithTimeout(15, handler: { (error) -> Void in
+            XCTAssertNil(error, "Error")
+        })
+        
+        
+        
+    }
+    
     
     
 }
