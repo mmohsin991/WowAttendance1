@@ -33,9 +33,6 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
         
         //segmrnted control default selection
         self.segmentControl.setEnabled(true, forSegmentAtIndex: 0)
-        
-        self.tableView.hidden = true
-        self.btnAdd.hidden = true
 
         
         // table view configurations
@@ -108,18 +105,13 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBAction func segmentControl(segment: UISegmentedControl) {
         if segment.selectedSegmentIndex == 0 {
-            self.tableView.hidden = true
-            self.btnAdd.hidden = true
-        }
-        else if segment.selectedSegmentIndex == 1 {
             self.tableView.hidden = false
             self.btnAdd.hidden = false
         }
-        else if segment.selectedSegmentIndex == 2 {
+        else if segment.selectedSegmentIndex == 1 {
             self.tableView.hidden = false
             self.btnAdd.hidden = true
         }
-
         
     }
     

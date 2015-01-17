@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LPG-Pc-Sq2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NME-TC-cEF">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -355,7 +355,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Itj-n3-y31"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eWQ-48-jNX">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Background1" translatesAutoresizingMaskIntoConstraints="NO" id="Cd9-FR-AKy">
@@ -423,9 +423,8 @@
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lOM-k9-gSM">
                                                 <rect key="frame" x="16" y="152" width="289" height="29"/>
                                                 <segments>
-                                                    <segment title="My Account"/>
-                                                    <segment title="Teams"/>
-                                                    <segment title="Members"/>
+                                                    <segment title="Orgs"/>
+                                                    <segment title="Subcribe"/>
                                                 </segments>
                                                 <color key="tintColor" red="0.35155093939999998" green="0.98338168660000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <connections>
@@ -616,6 +615,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="btnAdd" destination="3GZ-CV-7Z1" id="FQy-RH-wOl"/>
                         <outlet property="imgBackground" destination="Cd9-FR-AKy" id="Rof-8a-1vJ"/>
@@ -752,7 +752,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 <connections>
-                                                    <action selector="rePasswordEditingComplete:" destination="NME-TC-cEF" eventType="editingDidEnd" id="bYw-IY-ZO0"/>
+                                                    <action selector="rePasswordEditingComplete:" destination="NME-TC-cEF" eventType="editingDidEnd" id="rDM-XM-caz"/>
                                                     <action selector="txtFieldEditing:" destination="NME-TC-cEF" eventType="editingDidBegin" id="TyV-dQ-9I0"/>
                                                 </connections>
                                             </textField>
@@ -767,7 +767,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 <connections>
-                                                    <action selector="rePasswordEditingComplete:" destination="NME-TC-cEF" eventType="editingDidEnd" id="Wkx-n5-oyu"/>
+                                                    <action selector="rePasswordEditingComplete:" destination="NME-TC-cEF" eventType="editingDidEnd" id="d2w-Fj-Vtw"/>
                                                     <action selector="txtFieldEditing:" destination="NME-TC-cEF" eventType="editingDidBegin" id="Ahh-at-cQy"/>
                                                 </connections>
                                             </textField>
@@ -806,7 +806,7 @@
                         <outlet property="btnCreate" destination="Cdx-fK-xY6" id="zPz-JG-PfZ"/>
                         <outlet property="containerView" destination="RYS-Hd-6vX" id="CHb-Qa-nQK"/>
                         <outlet property="imgBackground" destination="Kt7-Xp-Fjc" id="ezD-qN-y8L"/>
-                        <outlet property="lblMsg" destination="1MJ-D5-hOe" id="rLF-vx-XtU"/>
+                        <outlet property="lblErrorMsg" destination="1MJ-D5-hOe" id="Nfy-vM-BSs"/>
                         <outlet property="lblRePasswordMatchingMsg" destination="3LY-OG-PRX" id="pWa-fh-ROB"/>
                         <outlet property="scrollView" destination="zkU-0k-MtM" id="yQ3-fz-U2E"/>
                         <outlet property="txtEmail" destination="lVr-i4-Tas" id="IQ2-Iu-x7c"/>

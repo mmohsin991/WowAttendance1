@@ -14,6 +14,7 @@ class SignupVC: UIViewController, UIScrollViewDelegate {
     var msg: String!
     var status: String!
     var rePasswordMatch = false
+    var isWating = false
     
     @IBOutlet weak var txtUID: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
@@ -29,7 +30,7 @@ class SignupVC: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var imgBackground: UIImageView!
 
-    @IBOutlet weak var lblMsg: UILabel!
+    @IBOutlet weak var lblErrorMsg: UILabel!
     @IBOutlet weak var waitingInd: UIActivityIndicatorView!
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -68,10 +69,79 @@ class SignupVC: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func cancel(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        if self.isWating{
+            self.lblErrorMsg.text = "please wait for response..."
+        }
+        else{
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
     }
 
     @IBAction func create(sender: AnyObject) {
+        
+        if isAllFilled() {
+            
+            if self.isWating{
+                self.lblErrorMsg.text = "please wait for response..."
+            }
+            else {
+                self.isWating = true
+                self.waitingInd.hidden = false
+                self.lblErrorMsg.text = "SignUping please wait..."
+
+                
+                let user = User(ref: "", uID: self.txtUID.text, email: self.txtEmail.text, firstName: self.txtFirstName.text, lastName: self.txtLastName.text, status: "1")
+                
+                wowref.asyncSignUpUser(user, password: self.txtPassword.text, callBack: { (error) -> Void in
+                    println(error)
+                    
+                    
+                    var errorAlert = UIAlertController(title: "Error!", message: "", preferredStyle: .Alert)
+                    var errorAction: UIAlertAction!
+                    
+                    
+                    if error != nil {
+                        
+                        errorAction = UIAlertAction(title: "Back", style: .Default, handler: nil)
+                        
+                        errorAlert.message = error
+                        
+                        errorAlert.addAction(errorAction)
+                    }
+                    else{
+                        errorAlert.title = "Success!"
+                        errorAlert.message = "Succefully Signup"
+                        
+                        errorAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+                        
+                        errorAlert.addAction(errorAction)
+                    }
+                    
+                    // update UI in main thread
+                    dispatch_sync(dispatch_get_main_queue()) {
+                        self.presentViewController(errorAlert, animated: true, completion: nil)
+                        
+                        self.isWating = false
+                        self.waitingInd.hidden = true
+                        self.lblErrorMsg.text = ""
+
+                    }
+
+                    
+                })
+            }
+            
+        }
+        else{
+            var backAlert = UIAlertController(title: "Error!", message: "Kindly fill all fields.", preferredStyle: .Alert)
+
+            let back = UIAlertAction(title: "Back", style: .Default, handler: nil)
+
+            backAlert.addAction(back)
+            
+            presentViewController(backAlert, animated: true, completion: nil)
+            
+        }
     }
     
     
@@ -91,10 +161,7 @@ class SignupVC: UIViewController, UIScrollViewDelegate {
             
             }, completion: nil)
     }
-//    @IBAction func passwordEditingComplete(sender: AnyObject) {
-//        UIView.transitionWithView(self.view, duration: 0.5, options: UIViewAnimationOptions.TransitionNone, animations: {         self.view.frame = CGRect(x: 0, y: 0, width: 320, height: 568)
-//            }, completion: nil)
-//    }
+
 
     @IBAction func rePasswordEditingComplete(sender: AnyObject) {
         if self.txtPassword.text != self.txtRePassword.text {
@@ -104,5 +171,22 @@ class SignupVC: UIViewController, UIScrollViewDelegate {
             self.lblRePasswordMatchingMsg.hidden = true
             self.rePasswordMatch = true
         }
+    }
+    
+    func isAllFilled() -> Bool{
+        if self.txtUID.text != "" &&
+        self.txtEmail.text != "" &&
+        self.txtFirstName.text != "" &&
+        self.txtLastName.text != "" &&
+        self.txtPassword.text != "" &&
+            self.txtRePassword.text != ""
+        {
+                return true
+        }
+
+        else{
+            return false
+        }
+        
     }
 }

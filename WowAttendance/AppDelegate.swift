@@ -6,6 +6,9 @@
 //  Copyright (c) 2015 PanaCloud. All rights reserved.
 //
 
+//blue => rgb(3, 169, 244)
+//lite green =>rgb(220, 237, 200)
+
 // Home Page Dev Branch
 
 import UIKit
