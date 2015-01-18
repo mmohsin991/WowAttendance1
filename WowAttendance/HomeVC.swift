@@ -39,7 +39,8 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
         self.tableView.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)
         self.tableView.separatorInset = UIEdgeInsets(top: 0.0, left: 15.0, bottom: 0.0, right: 15.0)
         
-       // self.navigationItem.title = "Home"
+        self.navigationController?.navigationBar.backgroundColor = UIColor.greenColor()
+        self.navigationItem.titleView = imgBarLogo
         
         println("HomeVCload")
         
@@ -66,13 +67,6 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
     
 
     
-    @IBAction func logOut(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: {
-            self.performSegueWithIdentifier("logoutSeg", sender: nil)
-            
-        })
-    }
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "logoutSeg"{
             
@@ -90,7 +84,7 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
         
         cell.textLabel?.text = "place holder"
-        cell.textLabel?.textColor = UIColor.whiteColor()
+        cell.textLabel?.textColor = colorLBlue
         
         cell.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)
         cell.separatorInset = UIEdgeInsets(top: 0.0, left: 15.0, bottom: 0.0, right: 15.0)
