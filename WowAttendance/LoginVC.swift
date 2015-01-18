@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 PanaCloud. All rights reserved.
 //
 
+
+
 import UIKit
 
 class LoginVC: UIViewController {
@@ -26,6 +28,10 @@ class LoginVC: UIViewController {
     @IBOutlet weak var containerView: UIView!
     
     var isWating = false
+
+    
+    func setFontColor() {
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +42,19 @@ class LoginVC: UIViewController {
         self.btnSignIn.layer.cornerRadius = 4.0
         self.btnSignUp.layer.cornerRadius = 4.0
         
+        self.txtEmail.layer.borderWidth = 1.0
+        self.txtPassword.layer.borderWidth = 1.0
+
+        self.txtEmail.layer.borderColor = UIColor.groupTableViewBackgroundColor().CGColor
+        self.txtPassword.layer.borderColor = UIColor.groupTableViewBackgroundColor().CGColor
+        
+        self.txtEmail.layer.cornerRadius = 4.0
+        self.txtPassword.layer.cornerRadius = 4.0
+        
+        
         self.containerView.frame = CGRect(x: 0, y: 60, width: 320, height: 428)
+        
+
         
         // temp work
         
@@ -77,7 +95,8 @@ class LoginVC: UIViewController {
     
     
     override func viewWillAppear(animated: Bool) {
-        self.imgBackground.image = backgroundImage
+     //   self.imgBackground.image = backgroundImage
+        
         self.lblErrorMsg.text = ""
         self.watingIndicator.hidden = true
     }
@@ -197,5 +216,14 @@ class LoginVC: UIViewController {
 
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    }
+    
+    
+    @IBAction func whenSelect(sender: UITextField) {
+        sender.layer.borderColor = colorLBlue.CGColor
+    }
+    @IBAction func whenDeSelect(sender: UITextField) {
+        sender.layer.borderColor = UIColor.groupTableViewBackgroundColor().CGColor
+
     }
 }
