@@ -22,7 +22,6 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblEmail: UILabel!
-    @IBOutlet weak var btnLogOut: UIButton!
     @IBOutlet weak var btnAdd: UIButton!
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
@@ -56,7 +55,7 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.imgBackground.image = backgroundImage
+     //   self.imgBackground.image = backgroundImage
     }
     
     

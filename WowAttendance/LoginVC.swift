@@ -221,9 +221,14 @@ class LoginVC: UIViewController {
     
     @IBAction func whenSelect(sender: UITextField) {
         sender.layer.borderColor = colorLBlue.CGColor
+        sender.layer.shadowRadius = 3
+        sender.layer.shadowOffset = CGSize(width: 3, height: 3)
+        sender.layer.shadowOpacity = 3.0
+        sender.layer.shadowColor = colorLBlue.CGColor
     }
     @IBAction func whenDeSelect(sender: UITextField) {
         sender.layer.borderColor = UIColor.groupTableViewBackgroundColor().CGColor
+        sender.layer.shadowRadius = 0
 
     }
 }
