@@ -47,7 +47,8 @@ class SidePanelViewController: UITableViewController {
     }
 
     override func viewWillAppear(animated: Bool) {
-        self.tableView.backgroundView = backgroundImageView
+        //self.tableView.backgroundView = backgroundImageView
+        self.tableView.backgroundColor = colorLBlue
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
