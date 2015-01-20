@@ -25,9 +25,12 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var btnAdd: UIButton!
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var loadingInd: UIActivityIndicatorView!
+    @IBOutlet weak var loadingLbl: UIButton!
     
     
-    var ownersList : [String: [String: String]]!
+    var ownersList = [String: [String: String]]()
+    var subscriber = [String: Int]()
 
     
     override func viewDidLoad() {
@@ -54,11 +57,15 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
         
       //  delegate?.collapseSidePanels!()
         
-        
-        wowref.asyncGetUsesOwnerOrgsList("mmohsin", callBack: { (ownersList) -> Void in
+        // load the orgs and subscriber list
+        wowref.asyncGetUsesOwnerOrgsList("zia", callBack: { (ownersList) -> Void in
             if ownersList != nil {
-                self.ownersList = ownersList
-                println(self.ownersList)
+                self.ownersList = ownersList!
+                self.tableView.reloadData()
+                
+                // stop and hide the loading indicators 
+                self.loadingInd.stopAnimating()
+                self.loadingLbl.hidden = true
             }
         })
     }
@@ -73,17 +80,21 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "logoutSeg"{
-            
-        }
-    }
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        
+        //select orgs segment
+        if self.segmentControl.selectedSegmentIndex == 0 {
+            return self.ownersList.keys.array.count
+        }
+        
+        //select subscriber segment
+        else if self.segmentControl.selectedSegmentIndex == 1 {
+            return self.subscriber.keys.array.count
+        }
+        
+        return 0
     }
     
     
@@ -91,8 +102,18 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
         
-        cell.textLabel?.text = "place holder"
-        cell.textLabel?.textColor = colorLBlue
+        //select orgs segment
+        if self.segmentControl.selectedSegmentIndex == 0 {
+            cell.textLabel?.text = self.ownersList.values.array[indexPath.row]["title"]
+            cell.detailTextLabel?.text = self.ownersList.values.array[indexPath.row]["desc"]
+
+        }
+            
+            //select subscriber segment
+        else if self.segmentControl.selectedSegmentIndex == 1 {
+            cell.textLabel?.text = self.subscriber.keys.array[indexPath.row]
+            cell.detailTextLabel?.text = self.ownersList.values.array[indexPath.row].description
+        }
         
         cell.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)
         cell.separatorInset = UIEdgeInsets(top: 0.0, left: 15.0, bottom: 0.0, right: 15.0)
@@ -113,10 +134,12 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
         if segment.selectedSegmentIndex == 0 {
             self.tableView.hidden = false
             self.btnAdd.hidden = false
+            self.tableView.reloadData()
         }
         else if segment.selectedSegmentIndex == 1 {
             self.tableView.hidden = false
             self.btnAdd.hidden = true
+            self.tableView.reloadData()
         }
         
     }

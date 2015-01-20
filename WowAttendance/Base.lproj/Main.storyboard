@@ -405,7 +405,7 @@
                                                 </connections>
                                             </button>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="jzH-8j-FQ1">
-                                                <rect key="frame" x="16" y="219" width="289" height="341"/>
+                                                <rect key="frame" x="0.0" y="219" width="320" height="349"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="separatorColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <prototypes>
@@ -466,6 +466,18 @@
                                                     <rect key="frame" x="74" y="109" width="230" height="35"/>
                                                 </variation>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zb6-Li-n3v">
+                                                <rect key="frame" x="16" y="186" width="70" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" title="Loading...">
+                                                    <color key="titleColor" red="1" green="0.18168933679999999" blue="0.1556655643" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="XY1-P0-2ey">
+                                                <rect key="frame" x="87" y="191" width="20" height="20"/>
+                                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                     </view>
                                 </subviews>
@@ -490,6 +502,8 @@
                         <outlet property="imgBackground" destination="Cd9-FR-AKy" id="Rof-8a-1vJ"/>
                         <outlet property="lblEmail" destination="3OD-3G-7Ew" id="goL-lu-sMc"/>
                         <outlet property="lblName" destination="8ql-bk-iQh" id="Qbp-Wr-E0F"/>
+                        <outlet property="loadingInd" destination="XY1-P0-2ey" id="sRD-fe-YvI"/>
+                        <outlet property="loadingLbl" destination="zb6-Li-n3v" id="rtI-Eo-PR9"/>
                         <outlet property="segmentControl" destination="lOM-k9-gSM" id="Odb-cC-JAY"/>
                         <outlet property="tableView" destination="jzH-8j-FQ1" id="eLf-jv-S4M"/>
                         <segue destination="hoJ-qI-dC2" kind="presentation" identifier="addTeamSeg" id="RZp-5m-xwP"/>
