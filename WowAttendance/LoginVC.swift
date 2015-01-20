@@ -10,6 +10,7 @@
 
 import UIKit
 
+
 class LoginVC: UIViewController {
 
     
@@ -51,10 +52,23 @@ class LoginVC: UIViewController {
         self.txtEmail.layer.cornerRadius = 4.0
         self.txtPassword.layer.cornerRadius = 4.0
         
+//        CALayer *sublayer = [CALayer layer];
+//        sublayer.backgroundColor = [UIColor blueColor].CGColor;
+//        sublayer.shadowOffset = CGSizeMake(0, 3);
+//        sublayer.shadowRadius = 5.0;
+//        sublayer.shadowColor = [UIColor blackColor].CGColor;
+//        sublayer.shadowOpacity = 0.8;
+//        sublayer.frame = CGRectMake(30, 30, 128, 192);
+//        [self.view.layer addSublayer:sublayer]
+        
+        btnSignIn.layer.shadowRadius = 5
+        btnSignIn.layer.shadowOffset = CGSize(width: 0, height: 3)
+        btnSignIn.layer.shadowOpacity = 0.8
+        btnSignIn.layer.shadowColor = colorLBlue.CGColor
+        btnSignIn.layer.masksToBounds = true
         
         self.containerView.frame = CGRect(x: 0, y: 60, width: 320, height: 428)
         
-
         
         // temp work
         
@@ -90,6 +104,7 @@ class LoginVC: UIViewController {
 //                println("login successfuly")
 //            }
 //        }
+
         
     }
     
@@ -221,10 +236,7 @@ class LoginVC: UIViewController {
     
     @IBAction func whenSelect(sender: UITextField) {
         sender.layer.borderColor = colorLBlue.CGColor
-        sender.layer.shadowRadius = 3
-        sender.layer.shadowOffset = CGSize(width: 3, height: 3)
-        sender.layer.shadowOpacity = 3.0
-        sender.layer.shadowColor = colorLBlue.CGColor
+
     }
     @IBAction func whenDeSelect(sender: UITextField) {
         sender.layer.borderColor = UIColor.groupTableViewBackgroundColor().CGColor

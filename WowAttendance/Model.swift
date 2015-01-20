@@ -259,7 +259,7 @@ class User{
     var lastName: String
     var status: String
     var members: [String : Int]?
-    var owner: [WowTeam]?
+    var owner: [String: [String: String]]?
     
     init(ref: String, uID: String, email: String, firstName: String, lastName: String, status: String){
         self.ref = ref
@@ -270,7 +270,7 @@ class User{
         self.status = status
     }
     
-    convenience init(ref: String, uID: String, email: String, firstName: String, lastName: String, status: String, members: [String : Int], owner: [WowTeam]){
+    convenience init(ref: String, uID: String, email: String, firstName: String, lastName: String, status: String, members: [String : Int], owner: [String: [String: String]]){
 
         self.init(ref: ref, uID: uID, email: email, firstName: firstName, lastName: lastName, status: status)
         
@@ -647,17 +647,31 @@ class WowRef {
                 callBack(error: "respnse is nil")
             }
             
-            
         })
         
         task.resume()
         
     }
     
-    
-    func deleteUser() {
+    func asyncGetUsesOwnerOrgsList(uID: String, callBack : (ownersList: [String: [String: String]]? ) -> Void) {
         
+        let ownerRef = WowRef.ref.childByAppendingPath("users/\(uID)/owner")
+        
+        ownerRef.observeEventType(FEventType.Value, withBlock: { snapshot in
+                        
+            if !(snapshot.value is NSNull) {
+                callBack(ownersList: snapshot.value as [String : [String : String]]?)
+            }
+            else{
+                callBack(ownersList: nil)
+            }
+            
+            }, withCancelBlock: { error in
+                println(error.description)
+                callBack(ownersList: nil)
+        })
     }
+
     
 }
 

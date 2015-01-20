@@ -25,6 +25,9 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var btnAdd: UIButton!
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
+    
+    
+    var ownersList : [String: [String: String]]!
 
     
     override func viewDidLoad() {
@@ -52,6 +55,12 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
       //  delegate?.collapseSidePanels!()
         
         
+        wowref.asyncGetUsesOwnerOrgsList("mmohsin", callBack: { (ownersList) -> Void in
+            if ownersList != nil {
+                self.ownersList = ownersList
+                println(self.ownersList)
+            }
+        })
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -91,6 +100,10 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 50.0
+    }
+    
 
     @IBAction func rightMenu(sender: AnyObject) {
         delegate?.toggleRightPanel!()
@@ -112,4 +125,5 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
         performSegueWithIdentifier("addTeamSeg", sender: self)
     }
     
+
 }

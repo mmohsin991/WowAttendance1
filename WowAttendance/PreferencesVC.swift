@@ -21,17 +21,17 @@ class PreferencesVC: WowUIViewController, UISplitViewControllerDelegate {
         
         self.navigationItem.title = "Preferences"
         
-        self.imgBackground.image = backgroundImage
+//        self.imgBackground.image = backgroundImage
         
         
         // set the current theme switch status
-        if currentTheme == "Background2" {
-            self.swtBackgroundColor.setOn(true, animated: true)
-        }
-        else if currentTheme == "Background1" {
-            self.swtBackgroundColor.setOn(false, animated: true)
-        }
-        
+//        if currentTheme == "Background2" {
+//            self.swtBackgroundColor.setOn(true, animated: true)
+//        }
+//        else if currentTheme == "Background1" {
+//            self.swtBackgroundColor.setOn(false, animated: true)
+//        }
+//        
         // enable the delegate,s functionality
         self.splitViewController?.delegate = self
         // hide the primary CV at startup
@@ -45,7 +45,7 @@ class PreferencesVC: WowUIViewController, UISplitViewControllerDelegate {
     
     
     override func viewWillAppear(animated: Bool) {
-        self.imgBackground.image = backgroundImage
+       // self.imgBackground.image = backgroundImage
         
     }
     
