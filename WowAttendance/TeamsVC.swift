@@ -97,7 +97,7 @@ class TeamsVC: WowUIViewController, UISplitViewControllerDelegate {
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.imgBackground.image = backgroundImage
+        //self.imgBackground.image = backgroundImage
     }
     
     // this func is hide the primary VC

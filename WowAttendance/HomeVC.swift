@@ -27,6 +27,7 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loadingInd: UIActivityIndicatorView!
     @IBOutlet weak var loadingLbl: UIButton!
+    @IBOutlet weak var imgUser: UIImageView!
     
     
     var ownersList = [String: [String: String]]()
@@ -47,7 +48,9 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
         self.navigationController?.navigationBar.backgroundColor = UIColor.greenColor()
         self.navigationItem.titleView = imgBarLogo
         
-        println("HomeVCload")
+        // mate user image in round shape
+        self.imgUser.layer.cornerRadius = self.imgUser.frame.size.width/2
+        self.imgUser.layer.masksToBounds = true
         
         if loginUser != nil{
             lblName.text = "\(loginUser!.firstName) \(loginUser!.lastName)"
@@ -57,17 +60,28 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
         
       //  delegate?.collapseSidePanels!()
         
-        // load the orgs and subscriber list
-        wowref.asyncGetUsesOwnerOrgsList("zia", callBack: { (ownersList) -> Void in
+        // load the orgs list
+         wowref.asyncGetUsesOwnerMemberOrgsList("zia", callBack: { (ownersList, memberList) -> Void in
             if ownersList != nil {
                 self.ownersList = ownersList!
                 self.tableView.reloadData()
                 
-                // stop and hide the loading indicators 
+                println(memberList)
+                
+                // stop and hide the loading indicators
                 self.loadingInd.stopAnimating()
                 self.loadingLbl.hidden = true
+                
             }
-        })
+            if memberList != nil {
+                
+                wowref.asynGetOrgsById(["org1" : 1], callBack: { (orgList) -> Void in
+                    println(orgList!)
+                })
+            }
+
+         })
+
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -117,6 +131,10 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
         
         cell.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)
         cell.separatorInset = UIEdgeInsets(top: 0.0, left: 15.0, bottom: 0.0, right: 15.0)
+        
+        cell.imageView?.layer.cornerRadius = 25
+        cell.imageView?.layer.masksToBounds = true
+        
 
         return cell
     }

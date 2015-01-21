@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		42083E5F1A63C6070061D32E /* TestStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42083E5E1A63C6070061D32E /* TestStoryboard.storyboard */; };
+		4226647B1A6FD4AC00755EDD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A03CD01A6D479B00F9323D /* QuartzCore.framework */; };
 		423D62DC1A60718B00D92D1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423D62DB1A60718B00D92D1B /* AppDelegate.swift */; };
 		423D62DF1A60718B00D92D1B /* WowAttendance.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 423D62DD1A60718B00D92D1B /* WowAttendance.xcdatamodeld */; };
 		423D62E11A60718B00D92D1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423D62E01A60718B00D92D1B /* ViewController.swift */; };
@@ -96,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4226647B1A6FD4AC00755EDD /* QuartzCore.framework in Frameworks */,
 				4248B23A1A62813E0003784E /* SystemConfiguration.framework in Frameworks */,
 				4248B2381A6281310003784E /* Security.framework in Frameworks */,
 				4248B2361A6281160003784E /* CFNetwork.framework in Frameworks */,

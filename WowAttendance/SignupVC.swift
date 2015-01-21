@@ -215,9 +215,17 @@ class SignupVC: UIViewController, UIScrollViewDelegate {
     
     @IBAction func whenSelect(sender: UITextField) {
         sender.layer.borderColor = colorLBlue.CGColor
+        // shadow on
+        sender.layer.shadowRadius = 3
+        sender.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        sender.layer.shadowOpacity = 0.8
+        sender.layer.shadowColor = colorLBlue.CGColor
+        sender.layer.masksToBounds = false
     }
     @IBAction func whenDeSelect(sender: UITextField) {
         sender.layer.borderColor = UIColor.groupTableViewBackgroundColor().CGColor
+        // shadow off
+        sender.layer.masksToBounds = true
         
     }
 }

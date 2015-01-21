@@ -653,25 +653,44 @@ class WowRef {
         
     }
     
-    func asyncGetUsesOwnerOrgsList(uID: String, callBack : (ownersList: [String: [String: String]]? ) -> Void) {
+    func asyncGetUsesOwnerMemberOrgsList(uID: String, callBack : (ownersList: [String: [String: String]]?, memberList: [String : Int]? ) -> Void) {
         
-        let ownerRef = WowRef.ref.childByAppendingPath("users/\(uID)/owner")
+        let ownerRef = WowRef.ref.childByAppendingPath("users/\(uID)")
         
         ownerRef.observeEventType(FEventType.Value, withBlock: { snapshot in
                         
             if !(snapshot.value is NSNull) {
-                callBack(ownersList: snapshot.value as [String : [String : String]]?)
+                callBack(ownersList: snapshot.value["owner"] as [String : [String : String]]?, memberList : snapshot.value["member"] as? [String : Int])
             }
             else{
-                callBack(ownersList: nil)
+                callBack(ownersList: nil, memberList: nil)
             }
             
             }, withCancelBlock: { error in
                 println(error.description)
-                callBack(ownersList: nil)
+                callBack(ownersList: nil, memberList: nil)
         })
     }
+    
 
+    func asynGetOrgsById(orgIdList: [String : Int], callBack: (orgList: [NSObject : AnyObject]?) -> Void){
+        let orgsRef = WowRef.ref.childByAppendingPath("orgs")
+        
+        orgsRef.queryOrderedByKey().queryEqualToValue(orgIdList.keys.array[0]).observeEventType(.ChildAdded, withBlock: { snapshot in
+            
+            if !(snapshot.value is NSNull) {
+                callBack(orgList: snapshot.value as? [NSObject : AnyObject])
+                println(snapshot.value)
+
+            }
+            else{
+                callBack(orgList: nil)
+            }
+            println(snapshot.value)
+        })
+        
+        
+    }
     
 }
 
