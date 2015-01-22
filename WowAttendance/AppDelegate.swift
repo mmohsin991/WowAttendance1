@@ -6,12 +6,12 @@
 //  Copyright (c) 2015 PanaCloud. All rights reserved.
 //
 
-
-// Master Branch
-
 //blue => rgb(3, 169, 244)
 //lite green =>rgb(220, 237, 200)
 
+
+
+// Master Branch
 
 
 
@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-//        
+        
 //        window = UIWindow(frame: UIScreen.mainScreen().bounds)
 //        
 //        let containerViewController = ContainerViewController()
