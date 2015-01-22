@@ -145,6 +145,15 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
         return 0
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if segmentControl.selectedSegmentIndex == 0 {
+            
+            performSegueWithIdentifier("teamSeg", sender: self.ownersList.keys.array[indexPath.row])
+        }
+        else if segmentControl.selectedSegmentIndex == 1 {
+            performSegueWithIdentifier("teamSeg", sender: self.subscriberList.keys.array[indexPath.row])
+        }
+    }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
@@ -177,6 +186,18 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
         return 50.0
     }
     
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "teamSeg" {
+            
+            let desVC = segue.destinationViewController as TeamVC
+            
+            desVC.selectedOrgId = sender as String
+            desVC.memberTypeWithOrg = self.segmentControl.selectedSegmentIndex
+        }
+    }
+    
+    
 
     @IBAction func rightMenu(sender: AnyObject) {
         delegate?.toggleRightPanel!()
@@ -199,6 +220,7 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBAction func addTeam(sender: AnyObject) {
         performSegueWithIdentifier("addTeamSeg", sender: self)
     }
+    
     
 
 }
