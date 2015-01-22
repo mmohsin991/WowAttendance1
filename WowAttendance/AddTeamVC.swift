@@ -19,7 +19,7 @@ class AddTeamVC: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-   //     self.imgBackground.image = backgroundImage
+        self.imgBackground.image = backgroundImage
     }
     
     override func didReceiveMemoryWarning() {

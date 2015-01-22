@@ -8,13 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		42083E5F1A63C6070061D32E /* TestStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42083E5E1A63C6070061D32E /* TestStoryboard.storyboard */; };
-		4226647B1A6FD4AC00755EDD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A03CD01A6D479B00F9323D /* QuartzCore.framework */; };
-		422C06B01A7195BB0081DF05 /* SubSubTeamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422C06AF1A7195BB0081DF05 /* SubSubTeamVC.swift */; };
-		422C06B11A7198050081DF05 /* SubSubTeamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422C06AF1A7195BB0081DF05 /* SubSubTeamVC.swift */; };
-		423C4A3F1A712B7900CA14DD /* TeamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423C4A3E1A712B7900CA14DD /* TeamVC.swift */; };
-		423C4A401A71409B00CA14DD /* TeamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423C4A3E1A712B7900CA14DD /* TeamVC.swift */; };
-		423C4A421A71868700CA14DD /* SubTeamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423C4A411A71868700CA14DD /* SubTeamVC.swift */; };
-		423C4A431A718A0100CA14DD /* SubTeamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423C4A411A71868700CA14DD /* SubTeamVC.swift */; };
 		423D62DC1A60718B00D92D1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423D62DB1A60718B00D92D1B /* AppDelegate.swift */; };
 		423D62DF1A60718B00D92D1B /* WowAttendance.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 423D62DD1A60718B00D92D1B /* WowAttendance.xcdatamodeld */; };
 		423D62E11A60718B00D92D1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423D62E01A60718B00D92D1B /* ViewController.swift */; };
@@ -29,12 +22,14 @@
 		4248B2381A6281310003784E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4248B2371A6281310003784E /* Security.framework */; };
 		4248B23A1A62813E0003784E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4248B2391A62813E0003784E /* SystemConfiguration.framework */; };
 		4248B23D1A62EB6A0003784E /* PreferencesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4248B23C1A62EB6A0003784E /* PreferencesVC.swift */; };
+		4248B23F1A63078E0003784E /* TeamsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4248B23E1A63078E0003784E /* TeamsVC.swift */; };
 		4248B2411A630B220003784E /* AddTeamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4248B2401A630B220003784E /* AddTeamVC.swift */; };
 		4248B2441A6311930003784E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4248B2421A6311930003784E /* LoginVC.swift */; };
 		4261E33D1A67D889000B7137 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423D62DB1A60718B00D92D1B /* AppDelegate.swift */; };
 		4261E33E1A67D88E000B7137 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423D62E01A60718B00D92D1B /* ViewController.swift */; };
 		4261E33F1A67D890000B7137 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4248B2421A6311930003784E /* LoginVC.swift */; };
 		4261E3411A67D897000B7137 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E9E6F81A61AF5F00720F9F /* HomeVC.swift */; };
+		4261E3421A67D89B000B7137 /* TeamsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4248B23E1A63078E0003784E /* TeamsVC.swift */; };
 		4261E3431A67D8A0000B7137 /* AddTeamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4248B2401A630B220003784E /* AddTeamVC.swift */; };
 		4261E3441A67D8A3000B7137 /* PreferencesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4248B23C1A62EB6A0003784E /* PreferencesVC.swift */; };
 		4261E3451A67D8A7000B7137 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E9E6BE1A61661200720F9F /* ContainerViewController.swift */; };
@@ -63,9 +58,6 @@
 
 /* Begin PBXFileReference section */
 		42083E5E1A63C6070061D32E /* TestStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TestStoryboard.storyboard; sourceTree = "<group>"; };
-		422C06AF1A7195BB0081DF05 /* SubSubTeamVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubSubTeamVC.swift; sourceTree = "<group>"; };
-		423C4A3E1A712B7900CA14DD /* TeamVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamVC.swift; sourceTree = "<group>"; };
-		423C4A411A71868700CA14DD /* SubTeamVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubTeamVC.swift; sourceTree = "<group>"; };
 		423D62D61A60718B00D92D1B /* WowAttendance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WowAttendance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		423D62DA1A60718B00D92D1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		423D62DB1A60718B00D92D1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +76,7 @@
 		4248B2371A6281310003784E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		4248B2391A62813E0003784E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4248B23C1A62EB6A0003784E /* PreferencesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesVC.swift; sourceTree = "<group>"; };
+		4248B23E1A63078E0003784E /* TeamsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamsVC.swift; sourceTree = "<group>"; };
 		4248B2401A630B220003784E /* AddTeamVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTeamVC.swift; sourceTree = "<group>"; };
 		4248B2421A6311930003784E /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		4261E34A1A67D933000B7137 /* WowAttendanceTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WowAttendanceTests-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -103,7 +96,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4226647B1A6FD4AC00755EDD /* QuartzCore.framework in Frameworks */,
 				4248B23A1A62813E0003784E /* SystemConfiguration.framework in Frameworks */,
 				4248B2381A6281310003784E /* Security.framework in Frameworks */,
 				4248B2361A6281160003784E /* CFNetwork.framework in Frameworks */,
@@ -151,9 +143,7 @@
 				4248B2421A6311930003784E /* LoginVC.swift */,
 				427B0B921A695E3400B51A71 /* SignupVC.swift */,
 				42E9E6F81A61AF5F00720F9F /* HomeVC.swift */,
-				423C4A3E1A712B7900CA14DD /* TeamVC.swift */,
-				423C4A411A71868700CA14DD /* SubTeamVC.swift */,
-				422C06AF1A7195BB0081DF05 /* SubSubTeamVC.swift */,
+				4248B23E1A63078E0003784E /* TeamsVC.swift */,
 				4248B2401A630B220003784E /* AddTeamVC.swift */,
 				4248B23C1A62EB6A0003784E /* PreferencesVC.swift */,
 				42E9E6BE1A61661200720F9F /* ContainerViewController.swift */,
@@ -322,14 +312,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				423C4A421A71868700CA14DD /* SubTeamVC.swift in Sources */,
-				423C4A3F1A712B7900CA14DD /* TeamVC.swift in Sources */,
 				42E9E6FD1A61B05C00720F9F /* Constants.swift in Sources */,
 				42E9E6C31A61661200720F9F /* SidePanelViewController.swift in Sources */,
 				4248B2441A6311930003784E /* LoginVC.swift in Sources */,
 				4248B2411A630B220003784E /* AddTeamVC.swift in Sources */,
 				42E9E6FF1A61BDD400720F9F /* Model.swift in Sources */,
-				422C06B01A7195BB0081DF05 /* SubSubTeamVC.swift in Sources */,
 				423D62E11A60718B00D92D1B /* ViewController.swift in Sources */,
 				427B0B931A695E3400B51A71 /* SignupVC.swift in Sources */,
 				42E9E6F91A61AF5F00720F9F /* HomeVC.swift in Sources */,
@@ -337,6 +324,7 @@
 				423D62DF1A60718B00D92D1B /* WowAttendance.xcdatamodeld in Sources */,
 				423D62DC1A60718B00D92D1B /* AppDelegate.swift in Sources */,
 				4248B23D1A62EB6A0003784E /* PreferencesVC.swift in Sources */,
+				4248B23F1A63078E0003784E /* TeamsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,14 +332,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				423C4A431A718A0100CA14DD /* SubTeamVC.swift in Sources */,
-				423C4A401A71409B00CA14DD /* TeamVC.swift in Sources */,
 				4261E3441A67D8A3000B7137 /* PreferencesVC.swift in Sources */,
+				4261E3421A67D89B000B7137 /* TeamsVC.swift in Sources */,
 				4261E3451A67D8A7000B7137 /* ContainerViewController.swift in Sources */,
 				4261E33E1A67D88E000B7137 /* ViewController.swift in Sources */,
 				4240C8861A67E08C00FFE1E7 /* ModelTests.swift in Sources */,
 				4261E3431A67D8A0000B7137 /* AddTeamVC.swift in Sources */,
-				422C06B11A7198050081DF05 /* SubSubTeamVC.swift in Sources */,
 				4261E3481A67D8B7000B7137 /* Model.swift in Sources */,
 				4261E33D1A67D889000B7137 /* AppDelegate.swift in Sources */,
 				4261E3411A67D897000B7137 /* HomeVC.swift in Sources */,
