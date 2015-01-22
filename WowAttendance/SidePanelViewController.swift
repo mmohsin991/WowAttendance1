@@ -136,7 +136,10 @@ extension UIStoryboard {
     class func homeVC() -> HomeVC? {
         return mainStoryboard().instantiateViewControllerWithIdentifier("homeVCID") as? HomeVC
     }
-
+    
+    class func teamVC() -> TeamVC? {
+        return mainStoryboard().instantiateViewControllerWithIdentifier("teamVCID") as? TeamVC
+    }
     
     class func preferencesVC() -> PreferencesVC? {
         return mainStoryboard().instantiateViewControllerWithIdentifier("preferencesVCID") as? PreferencesVC

@@ -20,6 +20,7 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var imgBackground: UIImageView!
     
+    @IBOutlet weak var lblUID: UILabel!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblEmail: UILabel!
     @IBOutlet weak var btnAdd: UIButton!
@@ -52,11 +53,6 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
         self.imgUser.layer.cornerRadius = self.imgUser.frame.size.width/2
         self.imgUser.layer.masksToBounds = true
         
-        if loginUser != nil{
-            lblName.text = "\(loginUser!.firstName) \(loginUser!.lastName)"
-            lblEmail.text = loginUser?.email
-            
-        }
         
       //  delegate?.collapseSidePanels!()
         
@@ -84,8 +80,8 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
         
     
         if loginUser == nil {
-            loginUser = User(ref: "", uID: "shezi", email: "ziaukhan@hotmail.com", firstName: "zia", lastName: "khan", status: "pending")
-            
+            loginUser = User(ref: "", uID: "shezi", email: "shahzadscs@gmail.com", firstName: "Shahzad", lastName: "Soomro", status: "pending")
+        }
             loginUser?.asynGetSubscriberOrgs({ (orgList) -> Void in
                 if orgList != nil {
                     
@@ -95,9 +91,7 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
                     // stop and hide the loading indicators
                     self.loadingInd.stopAnimating()
                     self.loadingLbl.hidden = true
-                    
                 }
-                
                 
             })
             
@@ -114,10 +108,15 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
                 }
                 
             })
-        }
 
-    }
     
+        if loginUser != nil{
+            lblUID.text = "@\(loginUser!.uID)"
+            lblName.text = "\(loginUser!.firstName) \(loginUser!.lastName)"
+            lblEmail.text = loginUser!.email
+        }
+    }
+
     override func viewWillAppear(animated: Bool) {
      //   self.imgBackground.image = backgroundImage
     }
@@ -194,6 +193,7 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
             
             desVC.selectedOrgId = sender as String
             desVC.memberTypeWithOrg = self.segmentControl.selectedSegmentIndex
+            desVC.delegate = self.delegate
         }
     }
     
@@ -206,12 +206,12 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBAction func segmentControl(segment: UISegmentedControl) {
         if segment.selectedSegmentIndex == 0 {
             self.tableView.hidden = false
-            self.btnAdd.hidden = false
+            self.btnAdd.setTitle("Add Org", forState: UIControlState.Normal)
             self.tableView.reloadData()
         }
         else if segment.selectedSegmentIndex == 1 {
             self.tableView.hidden = false
-            self.btnAdd.hidden = true
+            self.btnAdd.setTitle("Subscribe Org", forState: UIControlState.Normal)
             self.tableView.reloadData()
         }
         

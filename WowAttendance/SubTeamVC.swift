@@ -1,15 +1,15 @@
 //
-//  TeamVC.swift
+//  SubTeamVC.swift
 //  WowAttendance
 //
-//  Created by Mohsin on 22/01/2015.
+//  Created by Mohsin on 23/01/2015.
 //  Copyright (c) 2015 PanaCloud. All rights reserved.
 //
 
 import UIKit
 
-class TeamVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate  {
-
+class SubTeamVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate  {
+    
     @IBOutlet weak var imgBackground: UIImageView!
     
     @IBOutlet weak var lblOrgID: UILabel!
@@ -26,12 +26,15 @@ class TeamVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate  {
     var teamList = Dictionary<NSObject , AnyObject>()
     var memberList = Dictionary<NSObject , AnyObject>()
     
-    // value set by previous 
+    // value set by previous
     var selectedOrgId = String()
+    var selectedTeamId = String()
     var memberTypeWithOrg : Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        println(selectedTeamId)
         
         //segmrnted control default selection
         self.segmentControl.setEnabled(true, forSegmentAtIndex: 0)
@@ -47,10 +50,9 @@ class TeamVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate  {
         // mate user image in round shape
         self.imgUser.layer.cornerRadius = self.imgUser.frame.size.width/2
         self.imgUser.layer.masksToBounds = true
-            
         
         
-        println(selectedOrgId)
+        println(selectedTeamId)
         
         if loginUser != nil {
             
@@ -63,19 +65,23 @@ class TeamVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate  {
                         let tempOrgs :  [String: [NSObject : AnyObject] ] = orgList!
                         let selectedOrg = tempOrgs[self.selectedOrgId]!
                         
+                        
+                        let tempTeamList = (selectedOrg["teams"] as NSDictionary) as Dictionary
+                        let tempSelectedTeam = (tempTeamList[self.selectedTeamId] as NSDictionary) as Dictionary
+                        
                         // set the name, title and desc of selected org
-                        let name = selectedOrg["title"] as NSString
-                        let desc = selectedOrg["desc"] as NSString
-                        self.setDesc("@\(self.selectedOrgId)", name: name, desc: desc)
+                        let name = tempSelectedTeam["title"] as NSString
+                        let desc = tempSelectedTeam["desc"] as NSString
+                        self.setDesc("@\(self.selectedTeamId)", name: name, desc: desc)
                         
-                        if selectedOrg["teams"] != nil {
-                            self.teamList = (selectedOrg["teams"] as NSDictionary) as Dictionary
+                        if tempSelectedTeam["subteams"] != nil {
+                            self.teamList = (tempSelectedTeam["subteams"] as NSDictionary) as Dictionary
                         }
                         
-                        if selectedOrg["members"] != nil{
-                            self.memberList = (selectedOrg["members"] as NSDictionary) as Dictionary
+                        if tempSelectedTeam["members"] != nil{
+                            self.memberList = (tempSelectedTeam["members"] as NSDictionary) as Dictionary
                         }
-
+                        
                         
                         self.tableView.reloadData()
                         
@@ -87,19 +93,19 @@ class TeamVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate  {
                     
                 })
             }
-            
-            // if user's subscriber org clicked
+                
+                // if user's subscriber org clicked
             else if self.memberTypeWithOrg == 1 {
                 loginUser?.asynGetSubscriberOrgs({ (orgList) -> Void in
                     if orgList != nil {
                         
                         let tempOrgs :  [String: [NSObject : AnyObject] ] = orgList!
-                        let selectedOrg = tempOrgs[self.selectedOrgId]!
+                        let selectedOrg = tempOrgs[self.selectedTeamId]!
                         
                         // set the name, title and desc of selected org
                         let name = selectedOrg["title"] as NSString
                         let desc = selectedOrg["desc"] as NSString
-                        self.setDesc("@\(self.selectedOrgId)", name: name, desc: desc)
+                        self.setDesc("@\(self.selectedTeamId)", name: name, desc: desc)
                         
                         if selectedOrg["teams"] != nil {
                             self.teamList = (selectedOrg["teams"] as NSDictionary) as Dictionary
@@ -119,10 +125,12 @@ class TeamVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate  {
                 })
             }
             
-
+            
         }
         
     }
+    
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -140,19 +148,20 @@ class TeamVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate  {
             //select members segment
         else if self.segmentControl.selectedSegmentIndex == 1 {
             return self.teamList.keys.array.count
-
+            
         }
         
         return 0
     }
     
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if segmentControl.selectedSegmentIndex == 0 {
             
-           // performSegueWithIdentifier("subTeamSeg", sender: self.ownersList.keys.array[indexPath.row])
+            // performSegueWithIdentifier("subTeamSeg", sender: self.ownersList.keys.array[indexPath.row])
         }
         else if segmentControl.selectedSegmentIndex == 1 {
-            performSegueWithIdentifier("subTeamSeg", sender: self.teamList.keys.array[indexPath.row])
+            performSegueWithIdentifier("subSubTeamSeg", sender: self.teamList.keys.array[indexPath.row])
         }
     }
     
@@ -163,10 +172,10 @@ class TeamVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate  {
         //select teams segment
         if self.segmentControl.selectedSegmentIndex == 0 {
             cell.textLabel?.text = self.memberList.keys.array[indexPath.row] as NSString
-            
-            let firstName = self.memberList.values.array[indexPath.row]["firstName"] as NSString
-            let lastName = self.memberList.values.array[indexPath.row]["lastName"] as NSString
-            cell.detailTextLabel?.text = "\(firstName) \(lastName)"
+//            
+//            let firstName = self.memberList.values.array[indexPath.row]["firstName"] as NSString
+//            let lastName = self.memberList.values.array[indexPath.row]["lastName"] as NSString
+//            cell.detailTextLabel?.text = "\(firstName) \(lastName)"
         }
             
             //select members segment
@@ -190,21 +199,22 @@ class TeamVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate  {
     }
     
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "subSubTeamSeg" {
+            
+            let desVC = segue.destinationViewController as SubSubTeamVC
+            desVC.selectedOrgId = self.selectedOrgId
+            desVC.selectedTeamId = self.selectedTeamId
+            desVC.selectedSubTeamId = sender as String
+            desVC.memberTypeWithOrg = self.memberTypeWithOrg
+            desVC.delegate = self.delegate
+        }
+    }
+    
     func setDesc (orgID: String, name: String, desc: String) {
         lblOrgID.text = orgID
         lblName.text = name
         lblDesc.text = desc
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "subTeamSeg" {
-            
-            let desVC = segue.destinationViewController as SubTeamVC
-            desVC.selectedOrgId = self.selectedOrgId
-            desVC.selectedTeamId = sender as String
-            desVC.memberTypeWithOrg = self.memberTypeWithOrg
-            desVC.delegate = self.delegate
-        }
     }
     
     @IBAction func rightMenu(sender: AnyObject) {
@@ -228,5 +238,6 @@ class TeamVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate  {
     @IBAction func addTeam(sender: AnyObject) {
         performSegueWithIdentifier("addTeamSeg", sender: self)
     }
+
 
 }

@@ -43,8 +43,8 @@ class LoginVC: UIViewController {
         self.btnSignIn.layer.cornerRadius = 4.0
         self.btnSignUp.layer.cornerRadius = 4.0
         
-        self.txtEmail.layer.borderWidth = 1.0
-        self.txtPassword.layer.borderWidth = 1.0
+        self.txtEmail.layer.borderWidth = 2.0
+        self.txtPassword.layer.borderWidth = 2.0
 
         self.txtEmail.layer.borderColor = UIColor.groupTableViewBackgroundColor().CGColor
         self.txtPassword.layer.borderColor = UIColor.groupTableViewBackgroundColor().CGColor
