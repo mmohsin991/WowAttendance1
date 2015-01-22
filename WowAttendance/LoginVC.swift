@@ -43,8 +43,8 @@ class LoginVC: UIViewController {
         self.btnSignIn.layer.cornerRadius = 4.0
         self.btnSignUp.layer.cornerRadius = 4.0
         
-        self.txtEmail.layer.borderWidth = 1.0
-        self.txtPassword.layer.borderWidth = 1.0
+        self.txtEmail.layer.borderWidth = 2.0
+        self.txtPassword.layer.borderWidth = 2.0
 
         self.txtEmail.layer.borderColor = UIColor.groupTableViewBackgroundColor().CGColor
         self.txtPassword.layer.borderColor = UIColor.groupTableViewBackgroundColor().CGColor
@@ -52,20 +52,6 @@ class LoginVC: UIViewController {
         self.txtEmail.layer.cornerRadius = 4.0
         self.txtPassword.layer.cornerRadius = 4.0
         
-//        CALayer *sublayer = [CALayer layer];
-//        sublayer.backgroundColor = [UIColor blueColor].CGColor;
-//        sublayer.shadowOffset = CGSizeMake(0, 3);
-//        sublayer.shadowRadius = 5.0;
-//        sublayer.shadowColor = [UIColor blackColor].CGColor;
-//        sublayer.shadowOpacity = 0.8;
-//        sublayer.frame = CGRectMake(30, 30, 128, 192);
-//        [self.view.layer addSublayer:sublayer]
-        
-        btnSignIn.layer.shadowRadius = 5
-        btnSignIn.layer.shadowOffset = CGSize(width: 0, height: 3)
-        btnSignIn.layer.shadowOpacity = 0.8
-        btnSignIn.layer.shadowColor = colorLBlue.CGColor
-        btnSignIn.layer.masksToBounds = true
         
         self.containerView.frame = CGRect(x: 0, y: 60, width: 320, height: 428)
         
@@ -217,9 +203,6 @@ class LoginVC: UIViewController {
     }
     
     
-    
-    
-    
     @IBAction func passwordEditing(sender: AnyObject) {
         UIView.transitionWithView(self.view, duration: 0.5, options: UIViewAnimationOptions.TransitionNone, animations: {         self.view.frame = CGRect(x: 0, y: -60, width: 320, height: 568)
             }, completion: nil)
@@ -236,11 +219,20 @@ class LoginVC: UIViewController {
     
     @IBAction func whenSelect(sender: UITextField) {
         sender.layer.borderColor = colorLBlue.CGColor
+        
+        // shadow on
+        sender.layer.shadowRadius = 3
+        sender.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        sender.layer.shadowOpacity = 0.8
+        sender.layer.shadowColor = colorLBlue.CGColor
+        sender.layer.masksToBounds = false
 
     }
     @IBAction func whenDeSelect(sender: UITextField) {
         sender.layer.borderColor = UIColor.groupTableViewBackgroundColor().CGColor
-        sender.layer.shadowRadius = 0
+        
+        // shadow off
+        sender.layer.masksToBounds = true
 
     }
 }

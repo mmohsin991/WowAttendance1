@@ -22,7 +22,7 @@ protocol LogoutDelegate {
 
 class SidePanelViewController: UITableViewController {
 
-    var tempData = ["Home","Teams","Preferences","Log Out"]
+    var tempData = ["Home","InOut","Preferences","Log Out"]
 
     var delegate: SidePanelViewControllerDelegate?
     
@@ -58,7 +58,6 @@ class SidePanelViewController: UITableViewController {
         }
             
         else if indexPath.row == 1 {
-            delegate?.VClSelected(VC: UIStoryboard.teamsVC()!)
         }
             
         else if indexPath.row == 2 {
@@ -138,12 +137,12 @@ extension UIStoryboard {
         return mainStoryboard().instantiateViewControllerWithIdentifier("homeVCID") as? HomeVC
     }
     
-    class func preferencesVC() -> PreferencesVC? {
-        return mainStoryboard().instantiateViewControllerWithIdentifier("preferencesVCID") as? PreferencesVC
+    class func teamVC() -> TeamVC? {
+        return mainStoryboard().instantiateViewControllerWithIdentifier("teamVCID") as? TeamVC
     }
     
-    class func teamsVC() -> TeamsVC? {
-        return mainStoryboard().instantiateViewControllerWithIdentifier("teamsVCID") as? TeamsVC
+    class func preferencesVC() -> PreferencesVC? {
+        return mainStoryboard().instantiateViewControllerWithIdentifier("preferencesVCID") as? PreferencesVC
     }
 
     class func loginVC() -> LoginVC? {
