@@ -44,29 +44,6 @@ class SignupVC: UIViewController, UIScrollViewDelegate {
         
         btnCancel.layer.cornerRadius = 4.0
         btnCreate.layer.cornerRadius = 4.0
-        
-        
-        self.txtUID.layer.borderWidth = 1.0
-        self.txtEmail.layer.borderWidth = 1.0
-        self.txtFirstName.layer.borderWidth = 1.0
-        self.txtLastName.layer.borderWidth = 1.0
-        self.txtPassword.layer.borderWidth = 1.0
-        self.txtRePassword.layer.borderWidth = 1.0
-        
-        self.txtUID.layer.borderColor = UIColor.groupTableViewBackgroundColor().CGColor
-        self.txtEmail.layer.borderColor = UIColor.groupTableViewBackgroundColor().CGColor
-        self.txtFirstName.layer.borderColor = UIColor.groupTableViewBackgroundColor().CGColor
-        self.txtLastName.layer.borderColor = UIColor.groupTableViewBackgroundColor().CGColor
-        self.txtPassword.layer.borderColor = UIColor.groupTableViewBackgroundColor().CGColor
-        self.txtRePassword.layer.borderColor = UIColor.groupTableViewBackgroundColor().CGColor
-        
-        self.txtUID.layer.cornerRadius = 4.0
-        self.txtEmail.layer.cornerRadius = 4.0
-        self.txtFirstName.layer.cornerRadius = 4.0
-        self.txtLastName.layer.cornerRadius = 4.0
-        self.txtPassword.layer.cornerRadius = 4.0
-        self.txtRePassword.layer.cornerRadius = 4.0
-        
 
         self.waitingInd.hidden = true
         self.lblRePasswordMatchingMsg.hidden = true
@@ -82,7 +59,7 @@ class SignupVC: UIViewController, UIScrollViewDelegate {
     
     
     override func viewWillAppear(animated: Bool) {
-        //self.imgBackground.image = backgroundImage
+        self.imgBackground.image = backgroundImage
     }
     
     
@@ -210,22 +187,6 @@ class SignupVC: UIViewController, UIScrollViewDelegate {
         else{
             return false
         }
-        
-    }
-    
-    @IBAction func whenSelect(sender: UITextField) {
-        sender.layer.borderColor = colorLBlue.CGColor
-        // shadow on
-        sender.layer.shadowRadius = 3
-        sender.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
-        sender.layer.shadowOpacity = 0.8
-        sender.layer.shadowColor = colorLBlue.CGColor
-        sender.layer.masksToBounds = false
-    }
-    @IBAction func whenDeSelect(sender: UITextField) {
-        sender.layer.borderColor = UIColor.groupTableViewBackgroundColor().CGColor
-        // shadow off
-        sender.layer.masksToBounds = true
         
     }
 }

@@ -6,10 +6,7 @@
 //  Copyright (c) 2015 PanaCloud. All rights reserved.
 //
 
-
-
 import UIKit
-
 
 class LoginVC: UIViewController {
 
@@ -29,10 +26,6 @@ class LoginVC: UIViewController {
     @IBOutlet weak var containerView: UIView!
     
     var isWating = false
-
-    
-    func setFontColor() {
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,18 +36,7 @@ class LoginVC: UIViewController {
         self.btnSignIn.layer.cornerRadius = 4.0
         self.btnSignUp.layer.cornerRadius = 4.0
         
-        self.txtEmail.layer.borderWidth = 2.0
-        self.txtPassword.layer.borderWidth = 2.0
-
-        self.txtEmail.layer.borderColor = UIColor.groupTableViewBackgroundColor().CGColor
-        self.txtPassword.layer.borderColor = UIColor.groupTableViewBackgroundColor().CGColor
-        
-        self.txtEmail.layer.cornerRadius = 4.0
-        self.txtPassword.layer.cornerRadius = 4.0
-        
-        
         self.containerView.frame = CGRect(x: 0, y: 60, width: 320, height: 428)
-        
         
         // temp work
         
@@ -90,14 +72,12 @@ class LoginVC: UIViewController {
 //                println("login successfuly")
 //            }
 //        }
-
         
     }
     
     
     override func viewWillAppear(animated: Bool) {
-     //   self.imgBackground.image = backgroundImage
-        
+        self.imgBackground.image = backgroundImage
         self.lblErrorMsg.text = ""
         self.watingIndicator.hidden = true
     }
@@ -203,6 +183,9 @@ class LoginVC: UIViewController {
     }
     
     
+    
+    
+    
     @IBAction func passwordEditing(sender: AnyObject) {
         UIView.transitionWithView(self.view, duration: 0.5, options: UIViewAnimationOptions.TransitionNone, animations: {         self.view.frame = CGRect(x: 0, y: -60, width: 320, height: 568)
             }, completion: nil)
@@ -214,25 +197,5 @@ class LoginVC: UIViewController {
 
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    }
-    
-    
-    @IBAction func whenSelect(sender: UITextField) {
-        sender.layer.borderColor = colorLBlue.CGColor
-        
-        // shadow on
-        sender.layer.shadowRadius = 3
-        sender.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
-        sender.layer.shadowOpacity = 0.8
-        sender.layer.shadowColor = colorLBlue.CGColor
-        sender.layer.masksToBounds = false
-
-    }
-    @IBAction func whenDeSelect(sender: UITextField) {
-        sender.layer.borderColor = UIColor.groupTableViewBackgroundColor().CGColor
-        
-        // shadow off
-        sender.layer.masksToBounds = true
-
     }
 }
