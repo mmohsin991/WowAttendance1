@@ -100,20 +100,25 @@ class SubTeamVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate
                     if orgList != nil {
                         
                         let tempOrgs :  [String: [NSObject : AnyObject] ] = orgList!
-                        let selectedOrg = tempOrgs[self.selectedTeamId]!
+                        let selectedOrg = tempOrgs[self.selectedOrgId]!
+                        
+                        
+                        let tempTeamList = (selectedOrg["teams"] as NSDictionary) as Dictionary
+                        let tempSelectedTeam = (tempTeamList[self.selectedTeamId] as NSDictionary) as Dictionary
                         
                         // set the name, title and desc of selected org
-                        let name = selectedOrg["title"] as NSString
-                        let desc = selectedOrg["desc"] as NSString
+                        let name = tempSelectedTeam["title"] as NSString
+                        let desc = tempSelectedTeam["desc"] as NSString
                         self.setDesc("@\(self.selectedTeamId)", name: name, desc: desc)
                         
-                        if selectedOrg["teams"] != nil {
-                            self.teamList = (selectedOrg["teams"] as NSDictionary) as Dictionary
+                        if tempSelectedTeam["subteams"] != nil {
+                            self.teamList = (tempSelectedTeam["subteams"] as NSDictionary) as Dictionary
                         }
                         
-                        if selectedOrg["members"] != nil{
-                            self.memberList = (selectedOrg["members"] as NSDictionary) as Dictionary
+                        if tempSelectedTeam["members"] != nil{
+                            self.memberList = (tempSelectedTeam["members"] as NSDictionary) as Dictionary
                         }
+                        
                         
                         self.tableView.reloadData()
                         
