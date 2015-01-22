@@ -30,8 +30,8 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var imgUser: UIImageView!
     
     
-    var ownersList = [String: [String: String]]()
-    var subscriber = [String: Int]()
+    var ownersList = [String: [NSObject : AnyObject] ]()
+    var subscriberList = [String: [NSObject : AnyObject] ]()
 
     
     override func viewDidLoad() {
@@ -60,27 +60,61 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
         
       //  delegate?.collapseSidePanels!()
         
-        // load the orgs list
-         wowref.asyncGetUsesOwnerMemberOrgsList("zia", callBack: { (ownersList, memberList) -> Void in
-            if ownersList != nil {
-                self.ownersList = ownersList!
-                self.tableView.reloadData()
+//        // load the orgs list
+//         wowref.asyncGetUsesOwnerMemberOrgsList("zia", callBack: { (ownersList, memberList) -> Void in
+//            if ownersList != nil {
+//                self.ownersList = ownersList!
+//                self.tableView.reloadData()
+//                
+//                println(memberList)
+//                
+//                // stop and hide the loading indicators
+//                self.loadingInd.stopAnimating()
+//                self.loadingLbl.hidden = true
+//                
+//            }
+//            if memberList != nil {
+//                
+//                wowref.asynGetOrgsById(["org1", "org2","sda"], callBack: { (orgList) -> Void in
+//                    println(orgList!)
+//                })
+//            }
+//
+//         })
+        
+    
+        if loginUser == nil {
+            loginUser = User(ref: "", uID: "shezi", email: "ziaukhan@hotmail.com", firstName: "zia", lastName: "khan", status: "pending")
+            
+            loginUser?.asynGetSubscriberOrgs({ (orgList) -> Void in
+                if orgList != nil {
+                    
+                    self.subscriberList = orgList!
+                    self.tableView.reloadData()
+                    
+                    // stop and hide the loading indicators
+                    self.loadingInd.stopAnimating()
+                    self.loadingLbl.hidden = true
+                    
+                }
                 
-                println(memberList)
                 
-                // stop and hide the loading indicators
-                self.loadingInd.stopAnimating()
-                self.loadingLbl.hidden = true
+            })
+            
+            loginUser?.asynGetOwnerOrgs({ (orgList) -> Void in
                 
-            }
-            if memberList != nil {
+                if orgList != nil {
+                    self.ownersList = orgList!
+                    self.tableView.reloadData()
+                    
+                    // stop and hide the loading indicators
+                    self.loadingInd.stopAnimating()
+                    self.loadingLbl.hidden = true
+                    
+                }
                 
-                wowref.asynGetOrgsById(["org1" : 1], callBack: { (orgList) -> Void in
-                    println(orgList!)
-                })
-            }
-
-         })
+            })
+        }
 
     }
     
@@ -105,7 +139,7 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
         
         //select subscriber segment
         else if self.segmentControl.selectedSegmentIndex == 1 {
-            return self.subscriber.keys.array.count
+            return self.subscriberList.keys.array.count
         }
         
         return 0
@@ -118,15 +152,15 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
         
         //select orgs segment
         if self.segmentControl.selectedSegmentIndex == 0 {
-            cell.textLabel?.text = self.ownersList.values.array[indexPath.row]["title"]
-            cell.detailTextLabel?.text = self.ownersList.values.array[indexPath.row]["desc"]
+            cell.textLabel?.text = self.ownersList.values.array[indexPath.row]["title"] as NSString
+            cell.detailTextLabel?.text = self.ownersList.values.array[indexPath.row]["desc"] as NSString
 
         }
             
             //select subscriber segment
         else if self.segmentControl.selectedSegmentIndex == 1 {
-            cell.textLabel?.text = self.subscriber.keys.array[indexPath.row]
-            cell.detailTextLabel?.text = self.ownersList.values.array[indexPath.row].description
+            cell.textLabel?.text = self.subscriberList.values.array[indexPath.row]["title"] as NSString
+            cell.detailTextLabel?.text = self.subscriberList.values.array[indexPath.row]["desc"] as NSString
         }
         
         cell.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)
