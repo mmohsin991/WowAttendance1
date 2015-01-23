@@ -31,6 +31,10 @@ class SubTeamVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate
     var selectedTeamId = String()
     var memberTypeWithOrg : Int!
     
+    
+    var orgRef : Firebase!
+    var orgHandle : UInt!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,9 +62,14 @@ class SubTeamVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate
             
             // if user's owner org clicked
             if self.memberTypeWithOrg == 0 {
-                loginUser?.asynGetOwnerOrgs({ (orgList) -> Void in
+                wowref.asynGetOrgById(self.selectedOrgId, callBack: { (orgList, observerHandle, orgRef) -> Void in
                     
                     if orgList != nil {
+                        
+                        println("handel at sub team \(observerHandle)")
+
+                        self.orgRef = orgRef
+                        self.orgHandle = observerHandle
                         
                         let tempOrgs :  [String: [NSObject : AnyObject] ] = orgList!
                         let selectedOrg = tempOrgs[self.selectedOrgId]!
@@ -96,7 +105,8 @@ class SubTeamVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate
                 
                 // if user's subscriber org clicked
             else if self.memberTypeWithOrg == 1 {
-                loginUser?.asynGetSubscriberOrgs({ (orgList) -> Void in
+                
+                wowref.asynGetOrgById(self.selectedOrgId, callBack: { (orgList, observerHandle, orgRef) -> Void in
                     if orgList != nil {
                         
                         let tempOrgs :  [String: [NSObject : AnyObject] ] = orgList!
@@ -244,5 +254,9 @@ class SubTeamVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate
         performSegueWithIdentifier("addTeamSeg", sender: self)
     }
 
+    @IBAction func backBarButton(sender: UIBarButtonItem) {
+        self.orgRef.removeObserverWithHandle(self.orgHandle)
+        self.navigationController?.popViewControllerAnimated(true)
+    }
 
 }

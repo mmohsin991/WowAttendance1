@@ -864,38 +864,29 @@ class WowRef {
     
 
     // retrive whole orgs by org's ids
-    func asynGetOrgsById(orgIdList: [String], callBack: (orgList: [String: [NSObject : AnyObject] ]?) -> Void){
-        let orgsRef = WowRef.ref.childByAppendingPath("orgs")
+    func asynGetOrgById(orgIdList: String, callBack: (orgList: [String: [NSObject : AnyObject] ]?, observerHandle : UInt?, orgRef: Firebase) -> Void){
+        
+        let orgRef = WowRef.ref.childByAppendingPath("orgs/\(orgIdList)")
         var tempOrgsList = [String: [NSObject : AnyObject] ]()
+        var handel = UInt()
         
-        var countReturn = 0
-        
-        // loop to all orgs
-        for x in 0..<orgIdList.count {
-            orgsRef.childByAppendingPath(orgIdList[x]).observeEventType(.Value, withBlock: { snapshot in
+        handel = orgRef.observeEventType(.Value, withBlock: { snapshot in
                 
                 // if org exast against its org id
                 if !(snapshot.value is NSNull) {
-                    tempOrgsList[orgIdList[x]] = snapshot.value as? [NSObject : AnyObject]
-                    
-                    countReturn++
-                    // when all orgs return then callback
-                    if countReturn == orgIdList.count {
-                        callBack(orgList: tempOrgsList)
-                    }
+                    tempOrgsList[orgIdList] = snapshot.value as? [NSObject : AnyObject]
+                  
+                    callBack(orgList: tempOrgsList, observerHandle: handel, orgRef: orgRef)
                     
                 }
-                    // if org exast against its org id
+                    // if no org exast against its org id
                 else{
-                    countReturn++
-                    // when all orgs return then callback
-                    if countReturn == orgIdList.count {
-                        callBack(orgList: tempOrgsList)
-                    }
 
-                }
+                        callBack(orgList: nil, observerHandle: nil, orgRef: orgRef)
+                    }
+                
             })
-        }
+        
     }
     
 }

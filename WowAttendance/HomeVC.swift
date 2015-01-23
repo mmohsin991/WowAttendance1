@@ -69,12 +69,6 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
 //                self.loadingLbl.hidden = true
 //                
 //            }
-//            if memberList != nil {
-//                
-//                wowref.asynGetOrgsById(["org1", "org2","sda"], callBack: { (orgList) -> Void in
-//                    println(orgList!)
-//                })
-//            }
 //
 //         })
         
@@ -100,6 +94,7 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
                 if orgList != nil {
                     self.ownersList = orgList!
                     self.tableView.reloadData()
+                    
                     
                     // stop and hide the loading indicators
                     self.loadingInd.stopAnimating()

@@ -56,9 +56,10 @@ class TeamVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate  {
             
             // if user's owner org clicked
             if self.memberTypeWithOrg == 0 {
-                loginUser?.asynGetOwnerOrgs({ (orgList) -> Void in
-                    
+                
+                wowref.asynGetOrgById(self.selectedOrgId, callBack: { (orgList, observerHandle, orgRef) -> Void in
                     if orgList != nil {
+                        println("handel at team \(observerHandle)")
                         
                         let tempOrgs :  [String: [NSObject : AnyObject] ] = orgList!
                         let selectedOrg = tempOrgs[self.selectedOrgId]!
@@ -75,7 +76,7 @@ class TeamVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate  {
                         if selectedOrg["members"] != nil{
                             self.memberList = (selectedOrg["members"] as NSDictionary) as Dictionary
                         }
-
+                        
                         
                         self.tableView.reloadData()
                         
@@ -84,13 +85,13 @@ class TeamVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate  {
                         self.loadingLbl.hidden = true
                         
                     }
-                    
                 })
             }
             
             // if user's subscriber org clicked
             else if self.memberTypeWithOrg == 1 {
-                loginUser?.asynGetSubscriberOrgs({ (orgList) -> Void in
+                
+                wowref.asynGetOrgById(self.selectedOrgId, callBack: { (orgList, observerHandle, orgRef) -> Void in
                     if orgList != nil {
                         
                         let tempOrgs :  [String: [NSObject : AnyObject] ] = orgList!
@@ -109,6 +110,7 @@ class TeamVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate  {
                             self.memberList = (selectedOrg["members"] as NSDictionary) as Dictionary
                         }
                         
+                        
                         self.tableView.reloadData()
                         
                         // stop and hide the loading indicators
@@ -116,9 +118,9 @@ class TeamVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate  {
                         self.loadingLbl.hidden = true
                         
                     }
+                    
                 })
             }
-            
 
         }
         

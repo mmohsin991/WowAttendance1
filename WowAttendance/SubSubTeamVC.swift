@@ -59,7 +59,7 @@ class SubSubTeamVC: WowUIViewController, UITableViewDataSource, UITableViewDeleg
             
             // if user's owner org clicked
             if self.memberTypeWithOrg == 0 {
-                loginUser?.asynGetOwnerOrgs({ (orgList) -> Void in
+                wowref.asynGetOrgById(self.selectedOrgId, callBack: { (orgList, observerHandle, orgRef) -> Void in
                     
                     if orgList != nil {
                         
@@ -79,11 +79,11 @@ class SubSubTeamVC: WowUIViewController, UITableViewDataSource, UITableViewDeleg
                         self.setDesc("@\(self.selectedSubTeamId)", name: name, desc: desc)
                         
                         if tempSelectedSubTeam["subteams"] != nil {
-                            self.teamList = (tempSelectedTeam["subteams"] as NSDictionary) as Dictionary
+                            self.teamList = (tempSelectedSubTeam["subteams"] as NSDictionary) as Dictionary
                         }
                         
                         if tempSelectedSubTeam["members"] != nil{
-                            self.memberList = (tempSelectedTeam["members"] as NSDictionary) as Dictionary
+                            self.memberList = (tempSelectedSubTeam["members"] as NSDictionary) as Dictionary
                         }
                         
                         
@@ -100,7 +100,7 @@ class SubSubTeamVC: WowUIViewController, UITableViewDataSource, UITableViewDeleg
                 
                 // if user's subscriber org clicked
             else if self.memberTypeWithOrg == 1 {
-                loginUser?.asynGetSubscriberOrgs({ (orgList) -> Void in
+                wowref.asynGetOrgById(self.selectedOrgId, callBack: { (orgList, observerHandle, orgRef) -> Void in
                     if orgList != nil {
                         
                         let tempOrgs :  [String: [NSObject : AnyObject] ] = orgList!
@@ -119,11 +119,11 @@ class SubSubTeamVC: WowUIViewController, UITableViewDataSource, UITableViewDeleg
                         self.setDesc("@\(self.selectedSubTeamId)", name: name, desc: desc)
                         
                         if tempSelectedSubTeam["subteams"] != nil {
-                            self.teamList = (tempSelectedTeam["subteams"] as NSDictionary) as Dictionary
+                            self.teamList = (tempSelectedSubTeam["subteams"] as NSDictionary) as Dictionary
                         }
                         
                         if tempSelectedSubTeam["members"] != nil{
-                            self.memberList = (tempSelectedTeam["members"] as NSDictionary) as Dictionary
+                            self.memberList = (tempSelectedSubTeam["members"] as NSDictionary) as Dictionary
                         }
                         
                         
