@@ -948,10 +948,10 @@
             </objects>
             <point key="canvasLocation" x="-10645" y="-4408"/>
         </scene>
-        <!--Add OrgVC-->
+        <!--UserVC-->
         <scene sceneID="aNL-K1-Jzd">
             <objects>
-                <viewController id="jw8-MK-EuK" customClass="AddOrgVC" customModule="WowAttendance" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jw8-MK-EuK" customClass="UserVC" customModule="WowAttendance" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mza-C5-tLh"/>
                         <viewControllerLayoutGuide type="bottom" id="G1P-VB-hxa"/>
@@ -1176,6 +1176,6 @@
     </scenes>
     <resources>
         <image name="Background1" width="80" height="142"/>
-        <image name="placeholder" width="500" height="500"/>
+        <image name="placeholder" width="250" height="250"/>
     </resources>
 </document>

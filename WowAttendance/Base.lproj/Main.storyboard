@@ -59,7 +59,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change Theme Color" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGU-XK-9cS">
                                 <rect key="frame" x="16" y="85" width="184" height="38"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZu-LD-Pxf">
@@ -144,6 +144,9 @@
                                     <action selector="done:" destination="hoJ-qI-dC2" eventType="touchUpInside" id="MNu-am-cad"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="team" translatesAutoresizingMaskIntoConstraints="NO" id="2wa-bu-fu6">
+                                <rect key="frame" x="110" y="58" width="100" height="100"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -809,6 +812,7 @@
                         <outlet property="tableView" destination="8jd-HG-M4e" id="o2c-8M-sqL"/>
                         <segue destination="Cju-tX-i4j" kind="show" identifier="subTeamSeg" id="geB-Tz-G3N"/>
                         <segue destination="hoJ-qI-dC2" kind="presentation" identifier="addTeamSeg" id="wE3-Rk-6rz"/>
+                        <segue destination="isF-gD-iG5" kind="presentation" identifier="userSeg" id="e9e-Le-ImE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="phC-fh-pVQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1317,6 +1321,69 @@
             </objects>
             <point key="canvasLocation" x="-10651" y="-4233"/>
         </scene>
+        <!--UserVC-->
+        <scene sceneID="0kY-w3-UUx">
+            <objects>
+                <viewController id="isF-gD-iG5" customClass="UserVC" customModule="WowAttendance" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eb4-Ul-DA0"/>
+                        <viewControllerLayoutGuide type="bottom" id="9yv-bZ-rBG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nGx-0l-KIV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="zwQ-lN-esI">
+                                <rect key="frame" x="110" y="85" width="100" height="100"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name place holder" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBc-ja-Wvr">
+                                <rect key="frame" x="14" y="193" width="293" height="35"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="74" y="78" width="230" height="35"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="uID Place holder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFi-oi-ws6">
+                                <rect key="frame" x="14" y="243" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Org Desc place holder" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRT-8a-iFW">
+                                <rect key="frame" x="14" y="278" width="288" height="34"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="74" y="109" width="230" height="35"/>
+                                </variation>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Arh-7p-qSf">
+                                <rect key="frame" x="-2" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Member" id="KvT-MH-wJA">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="1YZ-LU-2qY">
+                                            <connections>
+                                                <action selector="back:" destination="isF-gD-iG5" id="s4Q-Wd-cqd"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="Vcn-1E-oyb"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XFX-M1-uaQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-9880" y="-5732"/>
+        </scene>
     </scenes>
     <resources>
         <image name="WowLogo" width="150" height="100"/>
@@ -1328,6 +1395,6 @@
         <image name="userAdd" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wE3-Rk-6rz"/>
+        <segue reference="GHd-20-8BK"/>
     </inferredMetricsTieBreakers>
 </document>

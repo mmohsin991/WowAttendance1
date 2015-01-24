@@ -45,7 +45,7 @@ class SubSubTeamVC: WowUIViewController, UITableViewDataSource, UITableViewDeleg
         self.tableView.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)
         self.tableView.separatorInset = UIEdgeInsets(top: 0.0, left: 15.0, bottom: 0.0, right: 15.0)
         
-        self.navigationController?.navigationBar.backgroundColor = UIColor.greenColor()
+      //  self.navigationController?.navigationBar.backgroundColor = UIColor.greenColor()
         self.navigationItem.titleView = imgBarLogo
         
         // mate user image in round shape
@@ -212,6 +212,40 @@ class SubSubTeamVC: WowUIViewController, UITableViewDataSource, UITableViewDeleg
         lblName.text = name
         lblDesc.text = desc
     }
+    func addMember() {
+        var subscribeAlert = UIAlertController(title: "Add Member", message: "Write member Id Below", preferredStyle: .Alert)
+        
+        subscribeAlert.addTextFieldWithConfigurationHandler { (txtOrgId) -> Void in
+            txtOrgId.placeholder = "Member Id"
+            
+            //            txtOrgId.layer.borderWidth = 2.0
+            //            txtOrgId.layer.borderColor = UIColor.groupTableViewBackgroundColor().CGColor
+            //            txtOrgId.layer.cornerRadius = 4.0
+            //
+            //
+            //            // shadow on
+            //            txtOrgId.layer.shadowRadius = 3
+            //            txtOrgId.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+            //            txtOrgId.layer.shadowOpacity = 0.8
+            //            txtOrgId.layer.shadowColor = colorLBlue.CGColor
+            //            txtOrgId.layer.masksToBounds = false
+        }
+        
+        let yes = UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default, handler: { _ in
+            
+            let txtOrgId = subscribeAlert.textFields![0] as UITextField
+            
+            println(txtOrgId.text)
+            // add subscribe function here
+            
+            
+        })
+        let no = UIAlertAction(title: "No", style: UIAlertActionStyle.Default, handler: nil)
+        subscribeAlert.addAction(no)
+        subscribeAlert.addAction(yes)
+        
+        presentViewController(subscribeAlert, animated: true, completion: nil)
+    }
     
     @IBAction func rightMenu(sender: AnyObject) {
         delegate?.toggleRightPanel!()
@@ -232,8 +266,12 @@ class SubSubTeamVC: WowUIViewController, UITableViewDataSource, UITableViewDeleg
     }
     
     @IBAction func addTeam(sender: AnyObject) {
-        performSegueWithIdentifier("addTeamSeg", sender: self)
-    }
+        if segmentControl.selectedSegmentIndex == 0 {
+            self.addMember()
+        }
+        else if segmentControl.selectedSegmentIndex == 1 {
+            performSegueWithIdentifier("addTeamSeg", sender: self)
+        }    }
     
     
 }
