@@ -22,7 +22,8 @@ protocol LogoutDelegate {
 
 class SidePanelViewController: UITableViewController {
 
-    var tempData = ["Home","Teams","Preferences","Log Out"]
+    var tempData = ["Home","Attendance","Preferences","Log Out"]
+    var imgArray = ["home","attendance","setting","logout"]
 
     var delegate: SidePanelViewControllerDelegate?
     
@@ -58,7 +59,6 @@ class SidePanelViewController: UITableViewController {
         }
             
         else if indexPath.row == 1 {
-            delegate?.VClSelected(VC: UIStoryboard.teamsVC()!)
         }
             
         else if indexPath.row == 2 {
@@ -94,9 +94,15 @@ class SidePanelViewController: UITableViewController {
         
         cell.textLabel?.text = self.tempData[indexPath.row]
         cell.textLabel?.textColor = UIColor.whiteColor()
+        cell.textLabel?.font = UIFont.boldSystemFontOfSize(18)
+    
         cell.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)
         
         cell.separatorInset = UIEdgeInsets(top: 0.0, left: 15.0, bottom: 0.0, right: 15.0)
+        
+        cell.imageView?.image = UIImage(named: self.imgArray[indexPath.row])
+        //cell.imageView?.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+        
         
         
         // Configure the cell selection color
@@ -120,6 +126,9 @@ class SidePanelViewController: UITableViewController {
             return 65.0
     }
     
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 50.0
+    }
     
 }
 
@@ -138,12 +147,12 @@ extension UIStoryboard {
         return mainStoryboard().instantiateViewControllerWithIdentifier("homeVCID") as? HomeVC
     }
     
-    class func preferencesVC() -> PreferencesVC? {
-        return mainStoryboard().instantiateViewControllerWithIdentifier("preferencesVCID") as? PreferencesVC
+    class func teamVC() -> TeamVC? {
+        return mainStoryboard().instantiateViewControllerWithIdentifier("teamVCID") as? TeamVC
     }
     
-    class func teamsVC() -> TeamsVC? {
-        return mainStoryboard().instantiateViewControllerWithIdentifier("teamsVCID") as? TeamsVC
+    class func preferencesVC() -> PreferencesVC? {
+        return mainStoryboard().instantiateViewControllerWithIdentifier("preferencesVCID") as? PreferencesVC
     }
 
     class func loginVC() -> LoginVC? {
