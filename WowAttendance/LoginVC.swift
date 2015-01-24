@@ -59,8 +59,8 @@ class LoginVC: UIViewController {
         // temp work
         
         var team = Team(ref: "", orgID: "mohsinTeam", desc: "mohsin is the owner", title: "mohsin tem org", owner: "mmohsin")
-        var team1 = Team(ref: "", orgID: "mohsinTeam1", desc: "omdsoam omdsa", title: "dsafa fdsa", owner: "mmohsin", members:  ["shezi" : 1, "mmohsin" : 1])
-        
+//        var team1 = Team(ref: "", orgID: "mohsinTeam3", desc: "omdsoam omdsa", title: "dsafa fdsa", owner: "mmohsin", members:  ["mmohsin" : 1])
+//        
 //        wowref.asyncCreateOrganization(team1, callBack: { (errorDesc, unRegMembersUIDs) -> Void in
 //            if errorDesc == nil {
 //                println("org crated")
@@ -71,7 +71,7 @@ class LoginVC: UIViewController {
 //                println(errorDesc)
 //            }
 //        })
-//        
+//
 //        wowref.asynUserIsExist("mmohsin", callBack: { (isExist) -> Void in
 //            if isExist {
 //                println("user exist")

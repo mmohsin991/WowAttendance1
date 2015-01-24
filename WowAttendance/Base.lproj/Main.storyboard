@@ -99,7 +99,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ksW-mM-NPh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-10202" y="-4158"/>
+            <point key="canvasLocation" x="-11385" y="-4209"/>
         </scene>
         <!--Add TeamVC-->
         <scene sceneID="geA-Ay-tjk">
@@ -154,7 +154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GF3-M7-Lkk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-10651" y="-4234"/>
+            <point key="canvasLocation" x="-10230" y="-4233"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="opK-VF-qhc">
@@ -315,17 +315,6 @@
                                                     <action selector="segmentControl:" destination="aCp-ym-djw" eventType="valueChanged" id="W7a-ko-ojn"/>
                                                 </connections>
                                             </segmentedControl>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqU-t2-uki">
-                                                <rect key="frame" x="115" y="181" width="190" height="36"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <state key="normal" title="Add Org">
-                                                    <color key="titleColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="addTeam:" destination="aCp-ym-djw" eventType="touchUpInside" id="0I7-7E-yau"/>
-                                                </connections>
-                                            </button>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="jzH-8j-FQ1">
                                                 <rect key="frame" x="0.0" y="219" width="320" height="349"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -352,7 +341,7 @@
                                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="placeholder" id="qTk-sg-pdm">
+                                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="org" id="qTk-sg-pdm">
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                 </imageView>
                                                             </subviews>
@@ -368,7 +357,7 @@
                                                     <outlet property="delegate" destination="aCp-ym-djw" id="kBU-tL-RhF"/>
                                                 </connections>
                                             </tableView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="tDK-Ot-nLe">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="tDK-Ot-nLe">
                                                 <rect key="frame" x="16" y="78" width="70" height="70"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name place holder" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ql-bk-iQh">
@@ -406,6 +395,16 @@
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqU-t2-uki">
+                                                <rect key="frame" x="270" y="183" width="35" height="35"/>
+                                                <state key="normal" title="Add Org" image="addOrg">
+                                                    <color key="titleColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="addTeam:" destination="aCp-ym-djw" eventType="touchUpInside" id="0I7-7E-yau"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </view>
                                 </subviews>
@@ -417,7 +416,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="xVC-de-4ao">
-                        <barButtonItem key="rightBarButtonItem" title="Menu" id="xMy-v1-Cjs">
+                        <barButtonItem key="rightBarButtonItem" image="menu" id="xMy-v1-Cjs">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="rightMenu:" destination="aCp-ym-djw" id="weC-Sq-v6U"/>
                             </connections>
@@ -436,8 +436,8 @@
                         <outlet property="loadingLbl" destination="zb6-Li-n3v" id="rtI-Eo-PR9"/>
                         <outlet property="segmentControl" destination="lOM-k9-gSM" id="Odb-cC-JAY"/>
                         <outlet property="tableView" destination="jzH-8j-FQ1" id="eLf-jv-S4M"/>
-                        <segue destination="hoJ-qI-dC2" kind="presentation" identifier="addTeamSeg" id="RZp-5m-xwP"/>
                         <segue destination="8A2-47-AL6" kind="show" identifier="teamSeg" id="p3E-zH-aSL"/>
+                        <segue destination="GTp-2C-DbJ" kind="presentation" identifier="addOrgSeg" id="6eU-KH-WPH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FdK-a7-k8w" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -686,17 +686,6 @@
                                                     <action selector="segmentControl:" destination="8A2-47-AL6" eventType="valueChanged" id="pDm-RU-2hK"/>
                                                 </connections>
                                             </segmentedControl>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MzF-cy-LZr">
-                                                <rect key="frame" x="131" y="181" width="174" height="36"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <state key="normal" title="Add Member">
-                                                    <color key="titleColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="addTeam:" destination="8A2-47-AL6" eventType="touchUpInside" id="AHL-ub-Kbs"/>
-                                                </connections>
-                                            </button>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8jd-HG-M4e">
                                                 <rect key="frame" x="0.0" y="219" width="320" height="349"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -723,7 +712,7 @@
                                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="placeholder" id="tvH-K4-JDg">
+                                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="user" id="tvH-K4-JDg">
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                 </imageView>
                                                             </subviews>
@@ -739,7 +728,7 @@
                                                     <outlet property="delegate" destination="8A2-47-AL6" id="NjC-W6-vKu"/>
                                                 </connections>
                                             </tableView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="zmt-Jp-UtX">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="org" translatesAutoresizingMaskIntoConstraints="NO" id="zmt-Jp-UtX">
                                                 <rect key="frame" x="16" y="78" width="70" height="70"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name place holder" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAn-YE-uoX">
@@ -777,6 +766,16 @@
                                                     <rect key="frame" x="74" y="109" width="230" height="35"/>
                                                 </variation>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MzF-cy-LZr">
+                                                <rect key="frame" x="265" y="181" width="40" height="40"/>
+                                                <state key="normal" image="userAdd">
+                                                    <color key="titleColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="addTeam:" destination="8A2-47-AL6" eventType="touchUpInside" id="AHL-ub-Kbs"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </view>
                                 </subviews>
@@ -788,7 +787,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Team" id="osb-cw-6PJ">
-                        <barButtonItem key="rightBarButtonItem" title="Menu" id="Fh3-IK-xdl">
+                        <barButtonItem key="rightBarButtonItem" image="menu" id="Fh3-IK-xdl">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="rightMenu:" destination="8A2-47-AL6" id="VYR-jE-fhw"/>
                             </connections>
@@ -853,17 +853,6 @@
                                                     <action selector="segmentControl:" destination="Cju-tX-i4j" eventType="valueChanged" id="79H-55-beP"/>
                                                 </connections>
                                             </segmentedControl>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AB3-gp-IHD">
-                                                <rect key="frame" x="131" y="181" width="174" height="36"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <state key="normal" title="Add Member">
-                                                    <color key="titleColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="addTeam:" destination="Cju-tX-i4j" eventType="touchUpInside" id="0oa-1M-opR"/>
-                                                </connections>
-                                            </button>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="S0a-LX-Q7S">
                                                 <rect key="frame" x="0.0" y="219" width="320" height="349"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -890,7 +879,7 @@
                                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="placeholder" id="qPa-MU-8v2">
+                                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="user" id="qPa-MU-8v2">
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                 </imageView>
                                                             </subviews>
@@ -906,7 +895,7 @@
                                                     <outlet property="delegate" destination="Cju-tX-i4j" id="BN7-iJ-nF7"/>
                                                 </connections>
                                             </tableView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="TOI-4z-2Lh">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="team" translatesAutoresizingMaskIntoConstraints="NO" id="TOI-4z-2Lh">
                                                 <rect key="frame" x="16" y="78" width="70" height="70"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name place holder" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfV-Yp-WXQ">
@@ -944,6 +933,16 @@
                                                     <rect key="frame" x="74" y="109" width="230" height="35"/>
                                                 </variation>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AB3-gp-IHD">
+                                                <rect key="frame" x="265" y="181" width="40" height="40"/>
+                                                <state key="normal" image="userAdd">
+                                                    <color key="titleColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="addTeam:" destination="Cju-tX-i4j" eventType="touchUpInside" id="0oa-1M-opR"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </view>
                                 </subviews>
@@ -955,7 +954,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Sub Team" id="0wm-Yb-QOM">
-                        <barButtonItem key="rightBarButtonItem" title="Menu" id="FVu-4k-uaW">
+                        <barButtonItem key="rightBarButtonItem" image="menu" id="FVu-4k-uaW">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="rightMenu:" destination="Cju-tX-i4j" id="0WA-oz-ElM"/>
                             </connections>
@@ -1020,17 +1020,6 @@
                                                     <action selector="segmentControl:" destination="zfa-gB-CKn" eventType="valueChanged" id="NQM-n9-gVD"/>
                                                 </connections>
                                             </segmentedControl>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RG9-aW-W9H">
-                                                <rect key="frame" x="131" y="181" width="174" height="36"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <state key="normal" title="Add Member">
-                                                    <color key="titleColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="addTeam:" destination="zfa-gB-CKn" eventType="touchUpInside" id="egl-uL-gYU"/>
-                                                </connections>
-                                            </button>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Ntr-Hb-8Xv">
                                                 <rect key="frame" x="0.0" y="219" width="320" height="349"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1057,7 +1046,7 @@
                                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="placeholder" id="Yef-Yu-5xP">
+                                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="user" id="Yef-Yu-5xP">
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                 </imageView>
                                                             </subviews>
@@ -1073,7 +1062,7 @@
                                                     <outlet property="delegate" destination="zfa-gB-CKn" id="UNC-ws-qza"/>
                                                 </connections>
                                             </tableView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="KQI-zL-s9o">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="team" translatesAutoresizingMaskIntoConstraints="NO" id="KQI-zL-s9o">
                                                 <rect key="frame" x="16" y="78" width="70" height="70"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name place holder" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRh-hj-Ovm">
@@ -1111,6 +1100,16 @@
                                                     <rect key="frame" x="74" y="109" width="230" height="35"/>
                                                 </variation>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RG9-aW-W9H">
+                                                <rect key="frame" x="272" y="181" width="40" height="40"/>
+                                                <state key="normal" image="userAdd">
+                                                    <color key="titleColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="addTeam:" destination="zfa-gB-CKn" eventType="touchUpInside" id="egl-uL-gYU"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </view>
                                 </subviews>
@@ -1122,7 +1121,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Sub Sub Team" id="wFn-em-u2w">
-                        <barButtonItem key="rightBarButtonItem" title="Menu" id="NQu-OI-n8I">
+                        <barButtonItem key="rightBarButtonItem" image="menu" id="NQu-OI-n8I">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="rightMenu:" destination="zfa-gB-CKn" id="pPN-b0-bG6"/>
                             </connections>
@@ -1147,12 +1147,187 @@
             </objects>
             <point key="canvasLocation" x="-9385" y="-5022"/>
         </scene>
+        <!--Add OrgVC-->
+        <scene sceneID="c4j-8F-WYg">
+            <objects>
+                <viewController id="GTp-2C-DbJ" customClass="AddOrgVC" customModule="WowAttendance" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mKS-lM-AFu"/>
+                        <viewControllerLayoutGuide type="bottom" id="wG8-gL-JcG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uBn-4T-fzS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3A2-1s-Ci0">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gtw-ez-q9x">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uj7-hM-hz5">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9B-UQ-Xd4">
+                                                <rect key="frame" x="28" y="406" width="120" height="48"/>
+                                                <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
+                                                <state key="normal" title="Cancel">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="cancel:" destination="GTp-2C-DbJ" eventType="touchUpInside" id="BAF-8e-Krb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xq-he-H37">
+                                                <rect key="frame" x="172" y="406" width="120" height="48"/>
+                                                <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
+                                                <state key="normal" title="Create">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="create:" destination="GTp-2C-DbJ" eventType="touchUpInside" id="DXh-Fg-Bhm"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bhu-St-LGb">
+                                                <rect key="frame" x="37" y="455" width="247" height="71"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="1" green="0.18168933679999999" blue="0.1556655643" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Ia6-s4-l23">
+                                                <rect key="frame" x="142" y="477" width="37" height="37"/>
+                                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            </activityIndicatorView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Org ID:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xv8-Jd-6gM">
+                                                <rect key="frame" x="36" y="92" width="247" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="textColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" alpha="0.89999997615814209" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="OrgID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="poK-oB-71b">
+                                                <rect key="frame" x="36" y="116" width="247" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="txtFieldEditing:" destination="GTp-2C-DbJ" eventType="editingDidBegin" id="SBy-bP-FPg"/>
+                                                    <action selector="whenDeSelect:" destination="GTp-2C-DbJ" eventType="editingDidEnd" id="jsg-04-zYv"/>
+                                                    <action selector="whenSelect:" destination="GTp-2C-DbJ" eventType="editingDidBegin" id="XEq-LV-h8r"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SzF-TP-NJw">
+                                                <rect key="frame" x="37" y="171" width="247" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="textColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" alpha="0.89999997615814209" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SDn-KJ-J9y">
+                                                <rect key="frame" x="37" y="195" width="247" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="txtFieldEditing:" destination="GTp-2C-DbJ" eventType="editingDidBegin" id="nOS-b4-9zQ"/>
+                                                    <action selector="whenDeSelect:" destination="GTp-2C-DbJ" eventType="editingDidEnd" id="62R-HS-8dd"/>
+                                                    <action selector="whenSelect:" destination="GTp-2C-DbJ" eventType="editingDidBegin" id="86U-EC-HRC"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjd-VJ-4LZ">
+                                                <rect key="frame" x="37" y="233" width="247" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="textColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" alpha="0.89999997615814209" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wHS-19-tbm">
+                                                <rect key="frame" x="37" y="257" width="247" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="txtFieldEditing:" destination="GTp-2C-DbJ" eventType="editingDidBegin" id="9sC-X9-SSM"/>
+                                                    <action selector="whenDeSelect:" destination="GTp-2C-DbJ" eventType="editingDidEnd" id="fW7-WI-2uy"/>
+                                                    <action selector="whenSelect:" destination="GTp-2C-DbJ" eventType="editingDidBegin" id="ntp-D3-Qmx"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Members:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAk-BH-1sm">
+                                                <rect key="frame" x="37" y="295" width="247" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="textColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" alpha="0.89999997615814209" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type Members ID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="atC-eb-QGf">
+                                                <rect key="frame" x="37" y="319" width="247" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="txtFieldEditing:" destination="GTp-2C-DbJ" eventType="editingDidBegin" id="pSE-wk-2aX"/>
+                                                    <action selector="whenDeSelect:" destination="GTp-2C-DbJ" eventType="editingDidEnd" id="3gP-0y-WHY"/>
+                                                    <action selector="whenSelect:" destination="GTp-2C-DbJ" eventType="editingDidBegin" id="ZNc-OG-1hH"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Org" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdR-4K-BSv">
+                                                <rect key="frame" x="16" y="44" width="288" height="40"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                <color key="textColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="*IDs separated by commas(optional)" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZcT-6v-fTO">
+                                                <rect key="frame" x="36" y="348" width="247" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="*Unique ID without spaces or special characters" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NLP-lR-yoW">
+                                                <rect key="frame" x="36" y="145" width="247" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </view>
+                                </subviews>
+                                <connections>
+                                    <outlet property="delegate" destination="GTp-2C-DbJ" id="jrA-rg-1VC"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="gtw-ez-q9x" secondAttribute="width" id="APq-gK-0Sj"/>
+                            <constraint firstAttribute="height" secondItem="gtw-ez-q9x" secondAttribute="height" id="pvB-Mb-12V"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="btnCancel" destination="c9B-UQ-Xd4" id="MxR-Jg-2EP"/>
+                        <outlet property="btnCreate" destination="4xq-he-H37" id="YJx-GI-wwO"/>
+                        <outlet property="containerView" destination="uj7-hM-hz5" id="nq7-U9-fYI"/>
+                        <outlet property="imgBackground" destination="3A2-1s-Ci0" id="lrJ-UG-rka"/>
+                        <outlet property="lblErrorMsg" destination="Bhu-St-LGb" id="9AS-33-lQn"/>
+                        <outlet property="scrollView" destination="gtw-ez-q9x" id="RDo-di-uOZ"/>
+                        <outlet property="txtOrgDesc" destination="wHS-19-tbm" id="2Ja-ln-m0X"/>
+                        <outlet property="txtOrgID" destination="poK-oB-71b" id="IQS-TE-H2q"/>
+                        <outlet property="txtOrgMembers" destination="atC-eb-QGf" id="ExA-IZ-LUv"/>
+                        <outlet property="txtOrgTitle" destination="SDn-KJ-J9y" id="c9n-50-gYJ"/>
+                        <outlet property="waitingInd" destination="Ia6-s4-l23" id="IsA-T4-44o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sQG-EK-RIZ" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-10651" y="-4233"/>
+        </scene>
     </scenes>
     <resources>
         <image name="WowLogo" width="150" height="100"/>
-        <image name="placeholder" width="500" height="500"/>
+        <image name="addOrg" width="50" height="50"/>
+        <image name="menu" width="42" height="42"/>
+        <image name="org" width="50" height="50"/>
+        <image name="team" width="50" height="50"/>
+        <image name="user" width="50" height="50"/>
+        <image name="userAdd" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GHd-20-8BK"/>
+        <segue reference="wE3-Rk-6rz"/>
     </inferredMetricsTieBreakers>
 </document>

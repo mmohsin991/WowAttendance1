@@ -171,19 +171,25 @@ class SubSubTeamVC: WowUIViewController, UITableViewDataSource, UITableViewDeleg
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
         
-        //select teams segment
+        //select members segment
         if self.segmentControl.selectedSegmentIndex == 0 {
-            cell.textLabel?.text = self.memberList.keys.array[indexPath.row] as NSString
-            //
+            cell.textLabel?.text = "@\(self.memberList.keys.array[indexPath.row] as NSString)"
+            
             //            let firstName = self.memberList.values.array[indexPath.row]["firstName"] as NSString
             //            let lastName = self.memberList.values.array[indexPath.row]["lastName"] as NSString
             //            cell.detailTextLabel?.text = "\(firstName) \(lastName)"
+            
+            cell.imageView?.image = UIImage(named: "user")
+
         }
             
-            //select members segment
+            //select teams segment
         else if self.segmentControl.selectedSegmentIndex == 1 {
             cell.textLabel?.text = self.teamList.values.array[indexPath.row]["title"] as NSString
             cell.detailTextLabel?.text = self.teamList.values.array[indexPath.row]["desc"] as NSString
+            
+            cell.imageView?.image = UIImage(named: "team")
+
         }
         
         cell.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)

@@ -22,7 +22,8 @@ protocol LogoutDelegate {
 
 class SidePanelViewController: UITableViewController {
 
-    var tempData = ["Home","InOut","Preferences","Log Out"]
+    var tempData = ["Home","Attendance","Preferences","Log Out"]
+    var imgArray = ["home","attendance","setting","logout"]
 
     var delegate: SidePanelViewControllerDelegate?
     
@@ -93,9 +94,15 @@ class SidePanelViewController: UITableViewController {
         
         cell.textLabel?.text = self.tempData[indexPath.row]
         cell.textLabel?.textColor = UIColor.whiteColor()
+        cell.textLabel?.font = UIFont.boldSystemFontOfSize(18)
+    
         cell.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)
         
         cell.separatorInset = UIEdgeInsets(top: 0.0, left: 15.0, bottom: 0.0, right: 15.0)
+        
+        cell.imageView?.image = UIImage(named: self.imgArray[indexPath.row])
+        //cell.imageView?.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+        
         
         
         // Configure the cell selection color
@@ -119,6 +126,9 @@ class SidePanelViewController: UITableViewController {
             return 65.0
     }
     
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 50.0
+    }
     
 }
 

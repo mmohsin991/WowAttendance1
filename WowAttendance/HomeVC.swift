@@ -49,10 +49,16 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
         self.navigationController?.navigationBar.backgroundColor = UIColor.greenColor()
         self.navigationItem.titleView = imgBarLogo
         
-        // mate user image in round shape
+        // made user image in round shape
         self.imgUser.layer.cornerRadius = self.imgUser.frame.size.width/2
         self.imgUser.layer.masksToBounds = true
         
+        self.btnAdd.layer.cornerRadius = self.btnAdd.frame.size.width/2
+//        self.btnAdd.layer.shadowRadius = 1
+//        self.btnAdd.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+//        self.btnAdd.layer.shadowOpacity = 0.8
+//        self.btnAdd.layer.shadowColor = UIColor.darkGrayColor().CGColor
+//        self.btnAdd.layer.masksToBounds = false
         
       //  delegate?.collapseSidePanels!()
         
@@ -213,9 +219,50 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     @IBAction func addTeam(sender: AnyObject) {
-        performSegueWithIdentifier("addTeamSeg", sender: self)
+        
+        if segmentControl.selectedSegmentIndex == 0 {
+            
+            performSegueWithIdentifier("addOrgSeg", sender: self)
+        }
+        else if segmentControl.selectedSegmentIndex == 1 {
+            // func to subscribe org
+             subscribeOrg()
+        }
     }
     
-    
+    func subscribeOrg() {
+        var subscribeAlert = UIAlertController(title: "Subscribe Org", message: "Write Org Id Below", preferredStyle: .Alert)
+        
+        subscribeAlert.addTextFieldWithConfigurationHandler { (txtOrgId) -> Void in
+            txtOrgId.placeholder = "Org Id"
+            
+//            txtOrgId.layer.borderWidth = 2.0
+//            txtOrgId.layer.borderColor = UIColor.groupTableViewBackgroundColor().CGColor
+//            txtOrgId.layer.cornerRadius = 4.0
+//            
+//            
+//            // shadow on
+//            txtOrgId.layer.shadowRadius = 3
+//            txtOrgId.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+//            txtOrgId.layer.shadowOpacity = 0.8
+//            txtOrgId.layer.shadowColor = colorLBlue.CGColor
+//            txtOrgId.layer.masksToBounds = false
+        }
+        
+        let yes = UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default, handler: { _ in
+            
+            let txtOrgId = subscribeAlert.textFields![0] as UITextField
+           
+            println(txtOrgId.text)
+            // add subscribe function here
+
+
+        })
+        let no = UIAlertAction(title: "No", style: UIAlertActionStyle.Default, handler: nil)
+        subscribeAlert.addAction(no)
+        subscribeAlert.addAction(yes)
+        
+        presentViewController(subscribeAlert, animated: true, completion: nil)
+    }
 
 }
