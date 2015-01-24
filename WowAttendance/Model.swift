@@ -305,31 +305,6 @@ class Team {
     }
 }
 
-class Org {
-    var ref: String
-    var orgID: String
-    var desc: String
-    var title: String
-    var owner: String // user uID
-    var members: [String : [String: AnyObject]]? // user uID, and member 
-    
-    
-    init(ref: String, orgID: String, desc: String, title: String, owner: String ){
-        self.orgID = orgID
-        self.desc = desc
-        self.title = title
-        self.ref = ref
-        self.owner = owner
-        
-    }
-    
-    convenience init(ref: String, orgID: String, desc: String, title: String, owner: String, members: [String : [String: AnyObject]]){
-        self.init(ref: ref, orgID: orgID, desc: desc, title: title, owner: owner)
-        
-        self.members = members
-        
-    }
-}
 
 class WowRef {
     
@@ -697,34 +672,6 @@ class WowRef {
         })
     }
 
-<<<<<<< HEAD
-=======
-    // retrive whole orgs by org's ids
-    func asynGetOrgById(orgIdList: String, callBack: (orgList: [String: [NSObject : AnyObject] ]?, observerHandle : UInt?, orgRef: Firebase) -> Void){
-        
-        let orgRef = WowRef.ref.childByAppendingPath("orgs/\(orgIdList)")
-        var tempOrgsList = [String: [NSObject : AnyObject] ]()
-        var handel = UInt()
-        
-        handel = orgRef.observeEventType(.Value, withBlock: { snapshot in
-                
-                // if org exast against its org id
-                if !(snapshot.value is NSNull) {
-                    tempOrgsList[orgIdList] = snapshot.value as? [NSObject : AnyObject]
-                  
-                    callBack(orgList: tempOrgsList, observerHandle: handel, orgRef: orgRef)
-                    
-                }
-                    // if no org exast against its org id
-                else{
-
-                        callBack(orgList: nil, observerHandle: nil, orgRef: orgRef)
-                    }
-                
-            })
-        
-    }
->>>>>>> NewTheme
     
 }
 

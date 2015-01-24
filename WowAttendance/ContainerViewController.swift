@@ -39,15 +39,11 @@ class ContainerViewController: UIViewController, CenterViewControllerDelegate, S
         
         self.centerNavigationController.viewControllers[0] = VC
         
-        // move to root VC if its not already at root VC
-        self.centerNavigationController.popToRootViewControllerAnimated(true)
-        
         self.centerViewController = VC
         
         centerViewController?.delegate = self
 
         self.collapseSidePanels()
-        
         
     }
 
