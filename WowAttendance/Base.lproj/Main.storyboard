@@ -492,14 +492,8 @@
                                                     <action selector="create:" destination="NME-TC-cEF" eventType="touchUpInside" id="zdW-Ad-XJt"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1MJ-D5-hOe">
-                                                <rect key="frame" x="37" y="488" width="247" height="71"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" red="1" green="0.18168933679999999" blue="0.1556655643" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="wrr-Y3-LeU">
-                                                <rect key="frame" x="142" y="510" width="37" height="37"/>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="wrr-Y3-LeU">
+                                                <rect key="frame" x="149" y="488" width="20" height="20"/>
                                                 <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             </activityIndicatorView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="UID:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMD-YR-aAA">
@@ -614,6 +608,12 @@
                                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                                     <rect key="frame" x="116" y="410" width="168" height="21"/>
                                                 </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1MJ-D5-hOe">
+                                                <rect key="frame" x="37" y="506" width="247" height="43"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="1" green="0.18168933679999999" blue="0.1556655643" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </view>
@@ -980,6 +980,7 @@
                         <outlet property="tableView" destination="S0a-LX-Q7S" id="cHT-b8-jt6"/>
                         <segue destination="hoJ-qI-dC2" kind="presentation" identifier="addTeamSeg" id="GHd-20-8BK"/>
                         <segue destination="zfa-gB-CKn" kind="show" identifier="subSubTeamSeg" id="VWD-om-FQd"/>
+                        <segue destination="isF-gD-iG5" kind="presentation" identifier="userSeg" id="Tq1-5N-asD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e9t-By-tqt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1145,6 +1146,7 @@
                         <outlet property="loadingLbl" destination="MdS-mu-sAh" id="byo-cH-UZx"/>
                         <outlet property="segmentControl" destination="shn-VL-gSh" id="0Ov-A6-n9r"/>
                         <outlet property="tableView" destination="Ntr-Hb-8Xv" id="Zl2-UA-He0"/>
+                        <segue destination="isF-gD-iG5" kind="presentation" identifier="userSeg" id="Emm-rW-QFU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7yF-RL-3zI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1196,14 +1198,8 @@
                                                     <action selector="create:" destination="GTp-2C-DbJ" eventType="touchUpInside" id="DXh-Fg-Bhm"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bhu-St-LGb">
-                                                <rect key="frame" x="37" y="455" width="247" height="71"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" red="1" green="0.18168933679999999" blue="0.1556655643" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Ia6-s4-l23">
-                                                <rect key="frame" x="142" y="477" width="37" height="37"/>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Ia6-s4-l23">
+                                                <rect key="frame" x="149" y="462" width="20" height="20"/>
                                                 <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             </activityIndicatorView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Org ID:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xv8-Jd-6gM">
@@ -1286,6 +1282,12 @@
                                                 <rect key="frame" x="36" y="145" width="247" height="31"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bhu-St-LGb">
+                                                <rect key="frame" x="36" y="483" width="247" height="45"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="1" green="0.18168933679999999" blue="0.1556655643" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -1377,8 +1379,12 @@
                     <toolbarItems>
                         <barButtonItem title="Item" id="Vcn-1E-oyb"/>
                     </toolbarItems>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="lblName" destination="mBc-ja-Wvr" id="NzJ-k5-5yx"/>
+                        <outlet property="lblUID" destination="VFi-oi-ws6" id="eCT-lQ-c5z"/>
+                        <outlet property="lblUserInfo" destination="MRT-8a-iFW" id="kei-bY-YZ3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XFX-M1-uaQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1395,6 +1401,7 @@
         <image name="userAdd" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GHd-20-8BK"/>
+        <segue reference="wE3-Rk-6rz"/>
+        <segue reference="Emm-rW-QFU"/>
     </inferredMetricsTieBreakers>
 </document>

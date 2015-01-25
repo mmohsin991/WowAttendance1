@@ -100,6 +100,7 @@ class TeamVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate  {
                         // set the name, title and desc of selected org
                         let name = selectedOrg["title"] as NSString
                         let desc = selectedOrg["desc"] as NSString
+                        
                         self.setDesc("@\(self.selectedOrgId)", name: name, desc: desc)
                         
                         if selectedOrg["teams"] != nil {
@@ -173,6 +174,7 @@ class TeamVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate  {
             }
 
             cell.imageView?.image = UIImage(named: "user")
+            
         }
             
             //select teams segment
@@ -212,7 +214,22 @@ class TeamVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate  {
             desVC.selectedOrgId = self.selectedOrgId
             desVC.selectedTeamId = sender as String
             desVC.memberTypeWithOrg = self.memberTypeWithOrg
+            desVC.orgMemberList = self.memberList
             desVC.delegate = self.delegate
+        }
+        
+        else if segue.identifier == "userSeg" {
+            
+            let desVC = segue.destinationViewController as UserVC
+            let selectedRow = self.tableView.indexPathsForSelectedRows()![0].row
+            
+            desVC.uID = "@\(self.memberList.keys.array[selectedRow] as NSString)"
+            // if user firstname and lastname available
+            if  self.memberList.values.array[selectedRow]["firstName"] != nil {
+                let firstName = self.memberList.values.array[selectedRow]["firstName"] as NSString
+                let lastName = self.memberList.values.array[selectedRow]["lastName"] as NSString
+                desVC.name = "\(firstName) \(lastName)"
+            }
         }
     }
     

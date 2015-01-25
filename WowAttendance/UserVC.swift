@@ -16,10 +16,17 @@ class UserVC: UIViewController {
     var desc = String()
 
     
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblUID: UILabel!
+    @IBOutlet weak var lblUserInfo: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.lblName.text = self.name
+        self.lblUID.text = self.uID
+        self.lblUserInfo.text = self.desc
     }
 
     override func didReceiveMemoryWarning() {

@@ -26,6 +26,9 @@ class SubTeamVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate
     var teamList = Dictionary<NSObject , AnyObject>()
     var memberList = Dictionary<NSObject , AnyObject>()
     
+    // populate from segue
+    var orgMemberList : Dictionary<NSObject , AnyObject>!
+    
     // value set by previous
     var selectedOrgId = String()
     var selectedTeamId = String()
@@ -38,7 +41,7 @@ class SubTeamVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        println(selectedTeamId)
+        println(orgMemberList)
         
         //segmrnted control default selection
         self.segmentControl.setEnabled(true, forSegmentAtIndex: 0)
@@ -119,6 +122,7 @@ class SubTeamVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate
                         // set the name, title and desc of selected org
                         let name = tempSelectedTeam["title"] as NSString
                         let desc = tempSelectedTeam["desc"] as NSString
+                        
                         self.setDesc("@\(self.selectedTeamId)", name: name, desc: desc)
                         
                         if tempSelectedTeam["subteams"] != nil {
@@ -172,9 +176,9 @@ class SubTeamVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if segmentControl.selectedSegmentIndex == 0 {
-            
-            // performSegueWithIdentifier("subTeamSeg", sender: self.ownersList.keys.array[indexPath.row])
+            performSegueWithIdentifier("userSeg", sender: self.memberList.keys.array[indexPath.row])
         }
+            
         else if segmentControl.selectedSegmentIndex == 1 {
             performSegueWithIdentifier("subSubTeamSeg", sender: self.teamList.keys.array[indexPath.row])
         }
@@ -186,12 +190,22 @@ class SubTeamVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate
         
         //select members segment
         if self.segmentControl.selectedSegmentIndex == 0 {
-            cell.textLabel?.text = "@\(self.memberList.keys.array[indexPath.row] as NSString)"
-//
-//            let firstName = self.memberList.values.array[indexPath.row]["firstName"] as NSString
-//            let lastName = self.memberList.values.array[indexPath.row]["lastName"] as NSString
-//            cell.detailTextLabel?.text = "\(firstName) \(lastName)"
-
+            let uID = self.memberList.keys.array[indexPath.row] as NSString
+            cell.textLabel?.text = "@\(uID)"
+            
+            if  let member: AnyObject = self.orgMemberList[uID] {
+                
+                let firstName = (member as Dictionary<NSString, NSString>)["firstName"]
+                let lastName = (member as Dictionary<NSString, NSString>)["lastName"]
+                cell.detailTextLabel?.text = "\(firstName!) \(lastName!)"
+                
+            }
+            // if member is not in the org
+            else {
+                cell.detailTextLabel?.text = "Member is not yet subscribe Org"
+                cell.detailTextLabel?.textColor = UIColor.redColor()
+            }
+            
             cell.imageView?.image = UIImage(named: "user")
 
         }
@@ -200,8 +214,10 @@ class SubTeamVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate
         else if self.segmentControl.selectedSegmentIndex == 1 {
             cell.textLabel?.text = self.teamList.values.array[indexPath.row]["title"] as NSString
             cell.detailTextLabel?.text = self.teamList.values.array[indexPath.row]["desc"] as NSString
-            
+            cell.detailTextLabel?.textColor = UIColor.blackColor()
+
             cell.imageView?.image = UIImage(named: "team")
+            
 
         }
         
@@ -228,7 +244,26 @@ class SubTeamVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate
             desVC.selectedTeamId = self.selectedTeamId
             desVC.selectedSubTeamId = sender as String
             desVC.memberTypeWithOrg = self.memberTypeWithOrg
+            desVC.orgMemberList = self.orgMemberList
             desVC.delegate = self.delegate
+        }
+        else if segue.identifier == "userSeg" {
+            
+            let desVC = segue.destinationViewController as UserVC
+            let selectedRow = self.tableView.indexPathsForSelectedRows()![0].row
+            
+            let uID = self.memberList.keys.array[selectedRow] as NSString
+            desVC.uID = "@\(uID)"
+            
+            // if member subscribe the org
+            if  let member: AnyObject = self.orgMemberList[uID] {
+                
+                let firstName = (member as Dictionary<NSString, NSString>)["firstName"]
+                let lastName = (member as Dictionary<NSString, NSString>)["lastName"]
+                desVC.name = "\(firstName!) \(lastName!)"
+                
+            }
+            
         }
     }
     
