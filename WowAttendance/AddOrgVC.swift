@@ -107,6 +107,12 @@ class AddOrgVC: UIViewController, UIScrollViewDelegate {
     
     @IBAction func create(sender: AnyObject) {
         
+        
+        UIView.transitionWithView(self.containerView, duration: 0.5, options: UIViewAnimationOptions.TransitionNone, animations: {         self.containerView.frame = CGRect(x: 0.0, y: 0.0, width: self.containerView.frame.size.width, height: self.containerView.frame.size.height)
+            
+            
+            }, completion: nil)
+        
         if isAllFilled() {
             
             if self.isWating{
@@ -146,7 +152,10 @@ class AddOrgVC: UIViewController, UIScrollViewDelegate {
                             errorAlert.message = "Succefully Org Create \n Note: These member(s) not exist\(unRegMembersUIDs!)"
                         }
                         
-                        errorAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+                        errorAction = UIAlertAction(title: "Ok", style: .Default, handler: { _ in
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                        })
+                        
                         
                         errorAlert.addAction(errorAction)
                         

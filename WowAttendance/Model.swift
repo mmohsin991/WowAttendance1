@@ -273,7 +273,7 @@ class User{
         self.status = status
         
         
-        self.asyncSetOwnerMemberList { () -> Void in }
+       // self.asyncSetOwnerMemberList { () -> Void in }
         
     }
     
@@ -285,7 +285,7 @@ class User{
         self.owner = owner
     }
     
-    // retrive user's owner list and subcrober org list
+    // retrive user's owner list and subcrober org list its a async method
     func asyncSetOwnerMemberList(callBack : () -> Void){
         
         let ownerRef = WowRef.ref.childByAppendingPath("users/\(self.uID)")
@@ -312,8 +312,6 @@ class User{
         
         var countReturn = 0
         
-        // if subscriber orgs are not loaded
-        if self.members == nil {
             self.asyncSetOwnerMemberList({ () -> Void in
                 
                 // if no subscriber orgs user have
@@ -324,7 +322,7 @@ class User{
                 
                 // loop to all orgs
                 for x in 0..<self.members!.keys.array.count {
-                    orgsRef.childByAppendingPath(self.members!.keys.array[x]).observeEventType(.Value, withBlock: { snapshot in
+                    orgsRef.childByAppendingPath(self.members!.keys.array[x]).observeSingleEventOfType(.Value, withBlock: { snapshot in
                         
                         // if org exast against its org id
                         if !(snapshot.value is NSNull) {
@@ -334,6 +332,7 @@ class User{
                             // when all orgs return then callback
                             if countReturn == self.members!.keys.array.count {
                                 callBack(orgList: tempOrgsList)
+                                countReturn = 0
                                 return
                             }
                             
@@ -344,6 +343,7 @@ class User{
                             // when all orgs return then callback
                             if countReturn == self.members!.keys.array.count {
                                 callBack(orgList: tempOrgsList)
+                                countReturn = 0
                                 return
                             }
                         }
@@ -353,38 +353,6 @@ class User{
                 
             })
             
-        }
-            // if subscriber orgs are loaded
-        else {
-            // loop to all orgs
-            for x in 0..<self.members!.keys.array.count {
-                orgsRef.childByAppendingPath(self.members!.keys.array[x]).observeEventType(.Value, withBlock: { snapshot in
-                    
-                    // if org exast against its org id
-                    if !(snapshot.value is NSNull) {
-                        tempOrgsList[self.members!.keys.array[x]] = snapshot.value as? [NSObject : AnyObject]
-                        
-                        countReturn++
-                        // when all orgs return then callback
-                        if countReturn == self.members!.keys.array.count {
-                            callBack(orgList: tempOrgsList)
-                        }
-                        
-                    }
-                        // if org exast against its org id
-                    else{
-                        countReturn++
-                        // when all orgs return then callback
-                        if countReturn == self.members!.keys.array.count {
-                            callBack(orgList: tempOrgsList)
-                        }
-                        
-                    }
-                })
-            }
-            
-        }
-
     }
 
     // retrive whole orgs by org's ids
@@ -394,8 +362,6 @@ class User{
         
         var countReturn = 0
         
-        // if owner orgs are not loaded
-        if self.owner == nil {
             self.asyncSetOwnerMemberList({ () -> Void in
                 
                 // if no owner orgs user have
@@ -406,7 +372,7 @@ class User{
                 
                 // loop to all orgs
                 for x in 0..<self.owner!.keys.array.count {
-                    orgsRef.childByAppendingPath(self.owner!.keys.array[x]).observeEventType(.Value, withBlock: { snapshot in
+                    orgsRef.childByAppendingPath(self.owner!.keys.array[x]).observeSingleEventOfType(.Value, withBlock: { snapshot in
                         
                         // if org exast against its org id
                         if !(snapshot.value is NSNull) {
@@ -416,6 +382,7 @@ class User{
                             // when all orgs return then callback
                             if countReturn == self.owner!.keys.array.count {
                                 callBack(orgList: tempOrgsList)
+                                countReturn = 0
                                 return
                             }
                             
@@ -426,6 +393,7 @@ class User{
                             // when all orgs return then callback
                             if countReturn == self.owner!.keys.array.count {
                                 callBack(orgList: tempOrgsList)
+                                countReturn = 0
                                 return
                             }
                         }
@@ -435,38 +403,6 @@ class User{
                 
             })
             
-        }
-            // if owner orgs are loaded
-        else {
-            // loop to all orgs
-            for x in 0..<self.owner!.keys.array.count {
-                orgsRef.childByAppendingPath(self.owner!.keys.array[x]).observeEventType(.Value, withBlock: { snapshot in
-                    
-                    // if org exast against its org id
-                    if !(snapshot.value is NSNull) {
-                        tempOrgsList[self.owner!.keys.array[x]] = snapshot.value as? [NSObject : AnyObject]
-                        
-                        countReturn++
-                        // when all orgs return then callback
-                        if countReturn == self.owner!.keys.array.count {
-                            callBack(orgList: tempOrgsList)
-                        }
-                        
-                    }
-                        // if org exast against its org id
-                    else{
-                        countReturn++
-                        // when all orgs return then callback
-                        if countReturn == self.owner!.keys.array.count {
-                            callBack(orgList: tempOrgsList)
-                        }
-                        
-                    }
-                })
-            }
-            
-        }
-        
     }
 
 }
@@ -873,14 +809,13 @@ class WowRef {
         let ownerRef = WowRef.ref.childByAppendingPath("users/\(uID)")
         
         ownerRef.observeEventType(FEventType.Value, withBlock: { snapshot in
-                        
+            
             if !(snapshot.value is NSNull) {
                 callBack(ownersList: snapshot.value["owner"] as [String : [String : String]]?, memberList : snapshot.value["member"] as? [String : Int])
             }
             else{
                 callBack(ownersList: nil, memberList: nil)
             }
-            
             }, withCancelBlock: { error in
                 println(error.description)
                 callBack(ownersList: nil, memberList: nil)

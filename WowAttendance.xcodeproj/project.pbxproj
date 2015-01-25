@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4207BF251A742724000C12D4 /* UserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AFB08D1A73C32D0080833A /* UserVC.swift */; };
 		42083E5F1A63C6070061D32E /* TestStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42083E5E1A63C6070061D32E /* TestStoryboard.storyboard */; };
 		420BE8D01A7272BD0091DAD8 /* AddOrgVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420BE8CF1A7272BC0091DAD8 /* AddOrgVC.swift */; };
 		420BE8D11A7297B00091DAD8 /* AddOrgVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420BE8CF1A7272BC0091DAD8 /* AddOrgVC.swift */; };
@@ -368,6 +369,7 @@
 				4261E33F1A67D890000B7137 /* LoginVC.swift in Sources */,
 				4261E3461A67D8AB000B7137 /* SidePanelViewController.swift in Sources */,
 				423D62F51A60718B00D92D1B /* WowAttendanceTests.swift in Sources */,
+				4207BF251A742724000C12D4 /* UserVC.swift in Sources */,
 				4261E3471A67D8B3000B7137 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
