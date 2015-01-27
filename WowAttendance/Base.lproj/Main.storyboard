@@ -100,67 +100,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ksW-mM-NPh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-11385" y="-4209"/>
-<<<<<<< HEAD
-        </scene>
-        <!--Add TeamVC-->
-        <scene sceneID="geA-Ay-tjk">
-            <objects>
-                <viewController id="hoJ-qI-dC2" customClass="AddTeamVC" customModule="WowAttendance" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Usa-w6-13c"/>
-                        <viewControllerLayoutGuide type="bottom" id="wg6-PE-XXW"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="are-jX-Mgt">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FOy-tt-fhk">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="576"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="add teams page" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRl-fE-L9i">
-                                <rect key="frame" x="68" y="138" width="184" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYu-kI-EuY">
-                                <rect key="frame" x="104" y="411" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Back">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="back:" destination="hoJ-qI-dC2" eventType="touchUpInside" id="pGy-Aw-qwy"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0t8-29-Cbe">
-                                <rect key="frame" x="185" y="411" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Done">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="done:" destination="hoJ-qI-dC2" eventType="touchUpInside" id="MNu-am-cad"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="team" translatesAutoresizingMaskIntoConstraints="NO" id="2wa-bu-fu6">
-                                <rect key="frame" x="110" y="58" width="100" height="100"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <outlet property="imgBackground" destination="FOy-tt-fhk" id="5kh-p7-10e"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GF3-M7-Lkk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-10230" y="-4233"/>
-=======
->>>>>>> NewTheme
         </scene>
         <!--LoginVC-->
         <scene sceneID="opK-VF-qhc">
@@ -814,13 +753,8 @@
                         <outlet property="segmentControl" destination="Oad-mL-ikx" id="rcf-5P-ZIs"/>
                         <outlet property="tableView" destination="8jd-HG-M4e" id="o2c-8M-sqL"/>
                         <segue destination="Cju-tX-i4j" kind="show" identifier="subTeamSeg" id="geB-Tz-G3N"/>
-<<<<<<< HEAD
-                        <segue destination="hoJ-qI-dC2" kind="presentation" identifier="addTeamSeg" id="wE3-Rk-6rz"/>
-                        <segue destination="isF-gD-iG5" kind="presentation" identifier="userSeg" id="e9e-Le-ImE"/>
-=======
                         <segue destination="isF-gD-iG5" kind="presentation" identifier="userSeg" id="e9e-Le-ImE"/>
                         <segue destination="1pH-tw-kWg" kind="presentation" identifier="addTeamSeg" id="y3m-IT-3kx"/>
->>>>>>> NewTheme
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="phC-fh-pVQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -988,10 +922,7 @@
                         <outlet property="tableView" destination="S0a-LX-Q7S" id="cHT-b8-jt6"/>
                         <segue destination="zfa-gB-CKn" kind="show" identifier="subSubTeamSeg" id="VWD-om-FQd"/>
                         <segue destination="isF-gD-iG5" kind="presentation" identifier="userSeg" id="Tq1-5N-asD"/>
-<<<<<<< HEAD
-=======
                         <segue destination="1pH-tw-kWg" kind="presentation" identifier="addTeamSeg" id="pSL-tS-n09"/>
->>>>>>> NewTheme
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e9t-By-tqt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1185,10 +1116,6 @@
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uj7-hM-hz5">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <subviews>
-<<<<<<< HEAD
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9B-UQ-Xd4">
-                                                <rect key="frame" x="28" y="406" width="120" height="48"/>
-=======
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Org" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdR-4K-BSv">
                                                 <rect key="frame" x="88" y="60" width="144" height="40"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
@@ -1200,7 +1127,6 @@
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9B-UQ-Xd4">
                                                 <rect key="frame" x="28" y="428" width="120" height="48"/>
->>>>>>> NewTheme
                                                 <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
                                                 <state key="normal" title="Cancel">
@@ -1212,11 +1138,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xq-he-H37">
-<<<<<<< HEAD
-                                                <rect key="frame" x="172" y="406" width="120" height="48"/>
-=======
                                                 <rect key="frame" x="172" y="428" width="120" height="48"/>
->>>>>>> NewTheme
                                                 <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
                                                 <state key="normal" title="Create">
@@ -1228,29 +1150,17 @@
                                                 </connections>
                                             </button>
                                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Ia6-s4-l23">
-<<<<<<< HEAD
-                                                <rect key="frame" x="149" y="462" width="20" height="20"/>
-                                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                            </activityIndicatorView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Org ID:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xv8-Jd-6gM">
-                                                <rect key="frame" x="36" y="92" width="247" height="21"/>
-=======
                                                 <rect key="frame" x="149" y="484" width="20" height="20"/>
                                                 <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             </activityIndicatorView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Org ID:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xv8-Jd-6gM">
                                                 <rect key="frame" x="36" y="114" width="247" height="21"/>
->>>>>>> NewTheme
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" alpha="0.89999997615814209" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="OrgID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="poK-oB-71b">
-<<<<<<< HEAD
-                                                <rect key="frame" x="36" y="116" width="247" height="30"/>
-=======
                                                 <rect key="frame" x="36" y="138" width="247" height="30"/>
->>>>>>> NewTheme
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
@@ -1260,21 +1170,13 @@
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SzF-TP-NJw">
-<<<<<<< HEAD
-                                                <rect key="frame" x="37" y="171" width="247" height="21"/>
-=======
                                                 <rect key="frame" x="37" y="193" width="247" height="21"/>
->>>>>>> NewTheme
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" alpha="0.89999997615814209" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SDn-KJ-J9y">
-<<<<<<< HEAD
-                                                <rect key="frame" x="37" y="195" width="247" height="30"/>
-=======
                                                 <rect key="frame" x="37" y="217" width="247" height="30"/>
->>>>>>> NewTheme
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
@@ -1284,21 +1186,13 @@
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjd-VJ-4LZ">
-<<<<<<< HEAD
-                                                <rect key="frame" x="37" y="233" width="247" height="21"/>
-=======
                                                 <rect key="frame" x="37" y="255" width="247" height="21"/>
->>>>>>> NewTheme
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" alpha="0.89999997615814209" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wHS-19-tbm">
-<<<<<<< HEAD
-                                                <rect key="frame" x="37" y="257" width="247" height="30"/>
-=======
                                                 <rect key="frame" x="37" y="279" width="247" height="30"/>
->>>>>>> NewTheme
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
@@ -1308,21 +1202,13 @@
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Members:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAk-BH-1sm">
-<<<<<<< HEAD
-                                                <rect key="frame" x="37" y="295" width="247" height="21"/>
-=======
                                                 <rect key="frame" x="37" y="317" width="247" height="21"/>
->>>>>>> NewTheme
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" alpha="0.89999997615814209" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type Members ID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="atC-eb-QGf">
-<<<<<<< HEAD
-                                                <rect key="frame" x="37" y="319" width="247" height="30"/>
-=======
                                                 <rect key="frame" x="37" y="341" width="247" height="30"/>
->>>>>>> NewTheme
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
@@ -1331,39 +1217,20 @@
                                                     <action selector="whenSelect:" destination="GTp-2C-DbJ" eventType="editingDidBegin" id="ZNc-OG-1hH"/>
                                                 </connections>
                                             </textField>
-<<<<<<< HEAD
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Org" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdR-4K-BSv">
-                                                <rect key="frame" x="16" y="44" width="288" height="40"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                                <color key="textColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="*IDs separated by commas(optional)" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZcT-6v-fTO">
-                                                <rect key="frame" x="36" y="348" width="247" height="18"/>
-=======
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="*IDs separated by commas(optional)" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZcT-6v-fTO">
                                                 <rect key="frame" x="36" y="370" width="247" height="18"/>
->>>>>>> NewTheme
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="*Unique ID without spaces or special characters" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NLP-lR-yoW">
-<<<<<<< HEAD
-                                                <rect key="frame" x="36" y="145" width="247" height="31"/>
-=======
                                                 <rect key="frame" x="36" y="167" width="247" height="31"/>
->>>>>>> NewTheme
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bhu-St-LGb">
-<<<<<<< HEAD
-                                                <rect key="frame" x="36" y="483" width="247" height="45"/>
-=======
                                                 <rect key="frame" x="36" y="505" width="247" height="39"/>
->>>>>>> NewTheme
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="1" green="0.18168933679999999" blue="0.1556655643" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1399,11 +1266,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sQG-EK-RIZ" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< HEAD
-            <point key="canvasLocation" x="-10651" y="-4233"/>
-=======
             <point key="canvasLocation" x="-10651" y="-4214"/>
->>>>>>> NewTheme
         </scene>
         <!--UserVC-->
         <scene sceneID="0kY-w3-UUx">
@@ -1472,8 +1335,6 @@
             </objects>
             <point key="canvasLocation" x="-9880" y="-5732"/>
         </scene>
-<<<<<<< HEAD
-=======
         <!--Add TeamVC-->
         <scene sceneID="pth-zD-NmI">
             <objects>
@@ -1647,7 +1508,6 @@
             </objects>
             <point key="canvasLocation" x="-10048" y="-4214"/>
         </scene>
->>>>>>> NewTheme
     </scenes>
     <resources>
         <image name="WowLogo" width="150" height="100"/>
@@ -1655,20 +1515,12 @@
         <image name="menu" width="42" height="42"/>
         <image name="org" width="50" height="50"/>
         <image name="team" width="50" height="50"/>
-<<<<<<< HEAD
-=======
         <image name="teamAdd" width="64" height="64"/>
->>>>>>> NewTheme
         <image name="user" width="50" height="50"/>
         <image name="userAdd" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-<<<<<<< HEAD
-        <segue reference="wE3-Rk-6rz"/>
-        <segue reference="Emm-rW-QFU"/>
-=======
         <segue reference="pSL-tS-n09"/>
         <segue reference="Tq1-5N-asD"/>
->>>>>>> NewTheme
     </inferredMetricsTieBreakers>
 </document>
