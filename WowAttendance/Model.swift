@@ -554,7 +554,8 @@ class WowRef {
                         userLocal = User(ref: "", uID: user["userID"]!, email: user["email"]!, firstName: user["firstName"]!, lastName: user["lastName"]!, status: user["status"]!)
                         
                         println("mohsin: \(userr) \n \(token)")
-                        
+                       
+                        // conform from firebase userID have appropriate token
                         self.asyncLogin(user["userID"]!, token: user["token"]!, callBack: { (errorDesc) -> Void in
                             if errorDesc == nil {
                                 callBack(error: nil, user: userLocal)
@@ -587,9 +588,11 @@ class WowRef {
     }
     
     // if successfuly login trn errorDesc will be nil
+    // conform from firebase userID have appropriate token
     func asyncLogin(uID: String, token: String, callBack: (errorDesc : String?) -> Void ){
         
-        // use wow app refrence here 
+        // use wow app refrence here
+        // use this ref b/c node.js server use this ref to create token and we verify this token against same ref
         let sirRef = Firebase(url: "https://luminous-torch-4640.firebaseio.com/")
         sirRef.authWithCustomToken(token , withCompletionBlock: { error, authData in
             
