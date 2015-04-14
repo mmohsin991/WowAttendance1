@@ -33,6 +33,7 @@ class TeamVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         //segmrnted control default selection
         self.segmentControl.setEnabled(true, forSegmentAtIndex: 0)
         

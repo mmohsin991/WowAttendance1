@@ -461,6 +461,7 @@ class Org {
 
 class WowRef {
     
+    
     private var isLogin : Bool = false
     
     var isUserLogin: Bool {
@@ -484,6 +485,8 @@ class WowRef {
     }
     
     
+    
+    
     init() {
         // need to implement some code here
         WowRef.ref.observeAuthEventWithBlock { (authData) -> Void in
@@ -492,6 +495,7 @@ class WowRef {
             
         }
     }
+    
     
     func asyncLoginUser(email: String, password: String, callBack: (error: String?, user: User?) -> Void){
         let url = "https://panacloudapi.herokuapp.com/api/signin"

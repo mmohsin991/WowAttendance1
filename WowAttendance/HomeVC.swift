@@ -38,6 +38,8 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
+        
         //segmrnted control default selection
         self.segmentControl.setEnabled(true, forSegmentAtIndex: 0)
 
@@ -116,6 +118,9 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
             lblName.text = "\(loginUser!.firstName) \(loginUser!.lastName)"
             lblEmail.text = loginUser!.email
         }
+        
+        
+        
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -256,7 +261,7 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBAction func addTeam(sender: AnyObject) {
         
         if segmentControl.selectedSegmentIndex == 0 {
-            
+
             performSegueWithIdentifier("addOrgSeg", sender: self)
         }
         else if segmentControl.selectedSegmentIndex == 1 {
